@@ -24,6 +24,18 @@ label {
   background-color: forestgreen;
 }
 
+#redirect-to-signup {
+  margin-left: 10em;
+  margin-top: 1em;
+  visibility: visible;
+  display: block;
+  
+}
+
+#redirect-to-signup:hover {
+  color:royalblue;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
