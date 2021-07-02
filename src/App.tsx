@@ -44,6 +44,7 @@ class App extends Component<any, any> {
             <Route path="/profile">
               <ProfileComponent />
             </Route>
+            
           </Switch>
         </Router>
         </div>
