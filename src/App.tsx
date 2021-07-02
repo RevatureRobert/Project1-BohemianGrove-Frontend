@@ -5,6 +5,9 @@ import SignInComponent from './Components/SignIn';
 import SignUpComponent from './Components/SignUp';
 import NavigationBar from './Components/NavBar';
 import CardContainer from './Components/Card';
+import SettingsComponent from './Components/Settings';
+import ProfileComponent from './Components/Profile';
+import Feed from './Components/Feed';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import { Component } from 'react';
@@ -33,7 +36,13 @@ class App extends Component<any, any> {
               <SignUpComponent />
             </Route>
             <Route path="/feed">
-              <CardContainer />
+              <Feed />
+            </Route>
+            <Route path="/settings">
+              <SettingsComponent />
+            </Route>
+            <Route path="/profile">
+              <ProfileComponent />
             </Route>
           </Switch>
         </Router>

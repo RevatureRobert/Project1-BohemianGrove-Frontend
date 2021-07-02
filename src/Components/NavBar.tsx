@@ -24,7 +24,7 @@ const NavigationBar = (props: any) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Bohemian Grove</NavbarBrand>
+        <NavbarBrand id="logo-text" href="/">Bohemian Grove</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="container-fluid" navbar>
@@ -39,16 +39,16 @@ const NavigationBar = (props: any) => {
                 Options
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>
-                  Option 1
+                <DropdownItem href="/settings">
+                  Settings
                 </DropdownItem>
-                <DropdownItem>
-                  Option 2
+                <DropdownItem href="/profile">
+                  Profile
                 </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
+                <DropdownItem href="/logout">
+                    Logout
                 </DropdownItem>
+                
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
