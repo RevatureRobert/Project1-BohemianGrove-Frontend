@@ -17,7 +17,7 @@ class Feed extends Component<any, any> {
         super(props);
         this.state = {
           postsList:[],
-          newInput: string,
+          newInput: ' ',
         };
       }
 
