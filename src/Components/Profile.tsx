@@ -8,10 +8,6 @@ import '../Styles/Profile.css';
 
 
 class ProfileComponent extends Component<any,any> {
-
-    
-
-  
     
     constructor(props){
         super(props);
