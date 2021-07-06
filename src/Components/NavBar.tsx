@@ -28,7 +28,7 @@ const NavigationBar = (props: any) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="container-fluid" navbar>
-            <NavItem class="ml-auto">
+            <NavItem className="ml-auto">
               <NavLink id="redirect-to-account" href="/signin">Account</NavLink>
             </NavItem>
             <NavItem>

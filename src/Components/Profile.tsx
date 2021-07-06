@@ -4,6 +4,7 @@ import { ListGroup, Card, CardBody, CardImg, Container, CardTitle, CardSubtitle,
         Nav, NavItem, NavLink, TabContent, Row, Col, TabPane, Button } from 'reactstrap';
 import thumbnail from '../thumbnails-z1-1.png';
 import '../Styles/Profile.css';
+import axios from 'axios';
 
 
 
@@ -21,6 +22,7 @@ class ProfileComponent extends Component<any,any> {
         //TODO
         //Pull user specific posts from endpoint upon initialization of component
         //Also pull user profile
+        
 
     }
 

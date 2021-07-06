@@ -12,6 +12,9 @@ class SettingsComponent extends Component<any, any> {
     }
 
 
+    //TODO
+    //Render form for updating profile information
+
     renderProfileCard() {
         return this.state.postsList.map((card) => (
             <div id="CardContainer">

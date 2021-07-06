@@ -9,6 +9,7 @@ import { render } from '@testing-library/react';
 import '../Styles/Card.css';
 import thumbnail from '../thumbnails-z1-1.png';
 import { string } from 'yargs';
+import axios from 'axios';
 
 
 class Feed extends Component<any, any> {
@@ -18,6 +19,7 @@ class Feed extends Component<any, any> {
         this.state = {
           postsList:[],
           newInput: ' ',
+          index: '1'
         };
       }
 
@@ -26,28 +28,39 @@ class Feed extends Component<any, any> {
           
       }
 
-    componentDidMount() {
+    async componentDidMount() {
         //TODO
         //Fetch posts from endpoint and pass to state
+        let posts: string[] = [];
+        const res =  await axios.get('http://localhost:3000/api/posts').then(res => {
+            console.log(res.data);
+            res.data.forEach(post => posts.push(post)); 
+            this.setState({ postsList : posts });
+        });
 
         
-        let posts = [
-            {
-                username: "John Smith",
-                handle: "JohnnyAppleSeed",
-                timestamp: "12.23.12:11.22.34",
-                img: "thumbnail",
-                body: "Peter Parker Piper Pan",
-            },
-            {
-                username: "Jane Doe",
-                handle: "GrabAPailOfWater",
-                timestamp: "11.37.23:44.48.09",
-                img: "thumbnail",
-                body: "Some random shitpost.",
-            }
-        ]
-        this.setState( {postsList : posts});
+        // for(let elem of res.data) {
+        //     posts.push(elem);
+        // }
+        
+        
+        // let posts = [
+        //     {
+        //         username: "John Smith",
+        //         handle: "JohnnyAppleSeed",
+        //         timestamp: "12.23.12:11.22.34",
+        //         img: "thumbnail",
+        //         body: "Peter Parker Piper Pan",
+        //     },
+        //     {
+        //         username: "Jane Doe",
+        //         handle: "GrabAPailOfWater",
+        //         timestamp: "11.37.23:44.48.09",
+        //         img: "thumbnail",
+        //         body: "Some random shitpost.",
+        //     }
+        // ]
+        // this.setState( {postsList : posts});
         
     }
 
@@ -61,14 +74,14 @@ class Feed extends Component<any, any> {
             <div id="CardContainer">
             <Card >              
               <CardBody>
-              <CardImg id ="card-image" top width="10px" height = "80px"  src={thumbnail} alt="Card image cap" />
-                <CardTitle id="card-title" tag="h5">{card.handle}</CardTitle>
-                <CardSubtitle id="card-subtitle" tag="h6" className="mb-2 text-muted">@{card.username}</CardSubtitle>
+              <CardImg id ="card-image" top width="10px" height = "80px"  src={thumbnail} alt={thumbnail} />
+                <CardTitle id="card-title" tag="h5">{card.displayName}</CardTitle>
+                <CardSubtitle id="card-subtitle" tag="h6" className="mb-2 text-muted">@{card.userName}</CardSubtitle>
                 
                 
               </CardBody>
-              <CardText id="body">{card.body}</CardText>
-              <CardText id="timestamp">{card.timestamp}</CardText>
+              <CardText id="body">{card.postBody}</CardText>
+              <CardText id="timestamp">{card.postTime}</CardText>
             </Card>
           </div>
 
@@ -87,7 +100,7 @@ class Feed extends Component<any, any> {
     render() {
         return(
             // onChange={(event) => this.updateNewInput(event.target.value) }
-            <div >
+            <div key={this.state.index}>
 
                 <Card id="AddPostContainer">
                     <CardBody>
