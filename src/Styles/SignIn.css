@@ -8,6 +8,8 @@
     padding: 1em;
     text-align: left;
     width: 600px;
+    opacity: 1.0;
+    background-color: white;    /* Fully opaque */
     
   }
 
@@ -22,6 +24,11 @@
   #submit-button {
     margin-top: 1em;
     background-color: forestgreen;
+  }
+
+  #sign-in-div{
+    opacity: 1.0;
+    background-color: white;    /* Fully opaque */
   }
 
   #redirect-new-user {

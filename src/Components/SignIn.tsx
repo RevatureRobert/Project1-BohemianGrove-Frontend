@@ -14,6 +14,7 @@ import {
   FormFeedback,
   Badge
 } from 'reactstrap';
+import axios from 'axios';
 
 
 
@@ -21,7 +22,7 @@ class SignInComponent extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
+      username: '',
       password: '',
       validate: {
         emailState: '',
@@ -57,12 +58,15 @@ class SignInComponent extends Component<any, any> {
 
   submitForm(e) {
     e.preventDefault();
-    console.log(`Email: ${this.state.email}`);
+
+    const auth = { userName : "johncena", password: "your_mom"}
+    axios.post('http://localhost:3000/api/users/authenticate', auth).then(resp => console.log(resp));
+    console.log(`Username: ${this.state.username}, Password: ${this.state.password}`);
   }
   render() {
     const { email, password } = this.state;
     return (
-      <div className="App">
+      <div id="sign-in-div" className="App">
         <h2>Bohemian Grove</h2>
         <Form className="form" onSubmit={(e) => this.submitForm(e)}>
         <FormGroup>
@@ -72,6 +76,7 @@ class SignInComponent extends Component<any, any> {
                   name="username"
                   id="username"
                   placeholder="Login"
+                  onChange={e => this.setState({ username: e.target.value})}
                   />
               </FormGroup>
           <FormGroup>
@@ -81,6 +86,7 @@ class SignInComponent extends Component<any, any> {
               name="password"
               id="examplePassword"
               placeholder="********"
+              onChange={e => this.setState({ password: e.target.value})}
             />
           </FormGroup>
         <Button id="submit-button">Submit</Button>

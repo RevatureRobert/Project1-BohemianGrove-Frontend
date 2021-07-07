@@ -1,5 +1,7 @@
 .SignUpComponent {
     border: 2px solid #d3d3d3;
+    opacity: 1.0;
+    background-color: 'white';
     border-radius: .5em;
     margin-bottom: 1em;
     margin-left: auto;
@@ -13,6 +15,17 @@
 
   .form {
     padding: 1em;
+  }
+
+  #sign-up-form{
+    opacity: 1.0;
+    background-color: white;    /* Fully opaque */
+  }
+
+  #redirect-from-signup{
+    margin-top: .5em;
+    color:whitesmoke;
+    width: 250px;
   }
   
   label {
@@ -33,6 +46,7 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+    background-image: none;
   }
   
   .SignUpComponent-link {

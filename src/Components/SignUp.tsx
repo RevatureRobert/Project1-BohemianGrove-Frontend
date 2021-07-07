@@ -7,10 +7,12 @@ import {
   Form,
   FormGroup,
   Input,
-  Label,
-  FormFeedback
+  Label, Container, Row, Col
 } from 'reactstrap';
 import { render } from 'react-dom';
+import axios from 'axios';
+import  { Redirect } from 'react-router-dom'
+
 
 class SignUpComponent extends Component<any, any> {
     constructor(props) {
@@ -20,6 +22,7 @@ class SignUpComponent extends Component<any, any> {
         displayname: ' ',
         password: ' ',
         email: ' ',
+        isUser: false,
         validate: {
             emailState: ' ',
         },
@@ -54,15 +57,36 @@ class SignUpComponent extends Component<any, any> {
 
       submitForm(e) {
         e.preventDefault();
-        console.log(`Email: ${this.state.email}`);
+        
+        const createNewUser = { userName: 'this.state.username', displayName : 'this.state.displayname', password: 'this.state.password', email: 'this.state.email' };
+        axios.post('http://localhost:3000/api/users', createNewUser).then(resp => console.log(resp));
+
+        console.log(`Email: ${this.state.email}, Username: ${this.state.username}, Password: ${this.state.password}, Displayname: ${this.state.displayname}`);
+
+        this.setState({ isUser: true});
+        //TODO
+        //Redirect to global feed
+        this.renderLogin();
+        
+      }
+
+      renderLogin() {
+
+        if(this.state.isUser) {
+        return (
+          <Button color="success" id="redirect-from-signup" href = "/feed">Login!</Button>
+        )
+        } else {
+          return <div></div>
+        }
       }
       
       render() {
         const { username, displayname, password, email } = this.state;
         return (
-          <div className="SignUpComponent">
+          <div id="sign-up-form" className="SignUpComponent">
             <h2>Bohemian Grove</h2>
-            <Form className="form" onSubmit={(e) => this.submitForm(e)}>
+            <Form className="form" onSubmit={(e) => this.submitForm(e)} >
 
               <FormGroup>
                 <Label for="exampleEmail">Email</Label>
@@ -77,6 +101,7 @@ class SignUpComponent extends Component<any, any> {
                   onChange={(e) => {
                     this.validateEmail(e);
                     this.handleChange(e);
+                    this.setState({ email: e.target.value });
                   }}
                 />
               </FormGroup>
@@ -88,6 +113,7 @@ class SignUpComponent extends Component<any, any> {
                   name="password"
                   id="examplePassword"
                   placeholder="********"
+                  onChange = {(e) => this.setState({ password: e.target.value })}
                 />
               </FormGroup>
 
@@ -97,6 +123,7 @@ class SignUpComponent extends Component<any, any> {
                   type="text"
                   name="handle"
                   id="displayName"
+                  onChange = {(e) => this.setState({ displayname: e.target.value })}
                   />
               </FormGroup>
 
@@ -106,9 +133,23 @@ class SignUpComponent extends Component<any, any> {
                   type="text"
                   name="username"
                   id="username"
+                  onChange = {(e) => this.setState({ username: e.target.value })}
                   />
               </FormGroup>
-            <Button id="submit-button">Submit</Button>
+            <Row>
+              <Col>
+              <Button color="primary" id="submit-button" onSubmit={(e) => this.submitForm(e)}  >Submit</Button>
+
+              </Col>
+              <Col>
+              <div id="redirect-from-signup">
+              {this.renderLogin()}
+              
+              </div>
+            
+              </Col>
+            </Row>
+            
           </Form>
         </div>
       );
