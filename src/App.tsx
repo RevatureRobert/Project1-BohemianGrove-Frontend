@@ -4,12 +4,12 @@ import './Styles/App.css';
 import SignInComponent from './Components/SignIn';
 import SignUpComponent from './Components/SignUp';
 import NavigationBar from './Components/NavBar';
+import SplashComponent from './Components/Splash';
 import CardContainer from './Components/Card';
 import SettingsComponent from './Components/Settings';
 import ProfileComponent from './Components/Profile';
 import Feed from './Components/Feed';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
 import { Component } from 'react';
 import {
   Button,
@@ -29,6 +29,9 @@ class App extends Component<any, any> {
           <NavigationBar />
         <Router>
           <Switch>
+            <Route path="/splash">
+              <SplashComponent />
+            </Route>
             <Route path="/signin">
               <SignInComponent />
             </Route>
