@@ -23,6 +23,8 @@ class Feed extends Component<any, any> {
         };
       }
 
+      
+
       componentDidCatch() {
           console.error();
           
@@ -97,6 +99,17 @@ class Feed extends Component<any, any> {
             
         }
 
+        createPost() {
+            //TODO
+            //Get user credentials from token
+            //Send Post request to server
+            let currTime = new Date().toLocaleString();
+            const postBody = { Post: { userName: 'JohnCena', postTime: '12.12.34', displayName: 'NowYouSeeMeNowYouDont', dispalyImg: 'undefined',
+                 postBody: 'Wrestlemania 2021: MetLife Stadium', postImg: 'undefined'}};
+
+            axios.post('http://localhost:3000/api/posts', postBody).then(resp => console.log(resp));
+        }
+
     render() {
         return(
             // onChange={(event) => this.updateNewInput(event.target.value) }
@@ -109,7 +122,7 @@ class Feed extends Component<any, any> {
                             <Label for="exampleText">What's on your mind?</Label>
                             <Input type="textarea" name="text" id="exampleText" />
                         </FormGroup>
-                        <Button id="post-button" color="primary">Post</Button>
+                        <Button onClick={() => this.createPost()} id="post-button" color="primary">Post</Button>
                     </CardBody>
                 </Card>
             
