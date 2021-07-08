@@ -3,8 +3,9 @@
     color: black;
 }
 
+
 #img-div{
-    background-image: url(/src/Assests/puzzle.jpg);
+    background-image: url(/src/Assests/comic.jpg);
     background-repeat: no-repeat;
     height: 750px;
     border-radius: 8px;
@@ -18,7 +19,6 @@
 }
 .splash-component{
     border: 2px solid #d3d3d3;
-    opacity: 1.0;
     background-color: plum;
     border-radius: .5em;
     margin-bottom: 1em;
@@ -28,20 +28,22 @@
     padding: 1em;
     text-align: left;
     width: 1200px;
+    height: 300px;
     max-width: 60%;
     opacity: 1.0;
      
 }
 
 #splash-div{
-    background-color: darkviolet;
+    background-color: rgb(153, 78, 185);
     
-    margin-top: 100px;
+
 }
 
 #signup-button{
     float: right;
     background-color: rgb(40, 1, 68);
+    
 }
 #parent-div{
     align-content: center;
@@ -49,6 +51,7 @@
 
 #signin-button{
     background-color: rgb(40, 1, 68);
+
 }
 
 #inner-div{

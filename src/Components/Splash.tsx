@@ -13,8 +13,10 @@ class SplashComponent extends React.Component<any, any>{
 
     constructor(props) {
         super(props);
+        
     }
 
+    
     signinClick(){
         this.props.history.push("/signin");
 
@@ -27,6 +29,7 @@ class SplashComponent extends React.Component<any, any>{
     }
 
     render() {
+      
         return (
         
           <div id="parent-div">
@@ -34,12 +37,12 @@ class SplashComponent extends React.Component<any, any>{
             
 
             <div id ="splash-div" className= "splash-component">
-          
-                <h1 id="splash-header">Hello and welcome to Bohemian Grove, the #1 social media site for conspiracy theorists.</h1>
+
+                <h1>"Hello and welcome to Bohemian Grove, the #1 social media site for conspiracy theorists. 
+                    Add more text to test the thing for the button on the page"</h1>
                 <Button id="signin-button" onClick = {()=>this.signinClick()}>Sign In</Button>
                 <Button id="signup-button" onClick = {()=>this.signupClick()}>Sign Up</Button>
         
-            
             </div> 
         </div>
     </div>
