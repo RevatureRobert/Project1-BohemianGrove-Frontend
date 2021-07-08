@@ -27,15 +27,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
     "react-router-dom": "^5.2.0",
-=======
-=======
->>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
->>>>>>> main
     "@types/react-redux": "^7.1.17",
     "@types/redux": "^3.6.0",
     "@types/redux-thunk": "^2.1.0",
