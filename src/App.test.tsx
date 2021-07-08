@@ -7,6 +7,7 @@ import SignUpComponent from './Components/SignUp';
 import NavigationBar from './Components/NavBar';
 import SettingsComponent from './Components/Settings';
 import ProfileComponent from './Components/Profile';
+import CardContainer from './Components/Card';
 import Feed from './Components/Feed';
 import Router from 'react-router';
 import App from './App';
@@ -14,6 +15,52 @@ import shallow from 'enzyme-adapter-react-16';
 import { createMemoryHistory } from "history";
 import { reducer } from './Redux/Store'
 import { initialState } from './Redux/State';
+import { mount } from 'enzyme';
+
+
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<MemoryRouter><SignUpComponent /></MemoryRouter>, div);
+});
+
+  it("should render title", () => {
+    const wrapper = render(
+      <MemoryRouter>
+        <SignUpComponent />
+     </MemoryRouter>
+    );
+    expect(wrapper.queryAllByText("Bohemian Grove")).toHaveLength(1);
+  });
+
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<MemoryRouter><SignInComponent /></MemoryRouter>, div);
+});
+
+  it("should render title", () => {
+    const wrapper = render(
+      <MemoryRouter>
+        <SignInComponent />
+     </MemoryRouter>
+    );
+    expect(wrapper.queryAllByText("Bohemian Grove")).toHaveLength(1);
+  });
+
+
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<MemoryRouter><Feed /></MemoryRouter>, div);
+});
+
+  it("should render title", () => {
+    const wrapper = render(
+      <MemoryRouter>
+        <Feed/>
+     </MemoryRouter>
+    );
+    expect(wrapper.queryAllByText("new-card-title")).toHaveLength(1);
+  });
+
 
 it('has a languageName of "TypeScript"', () => {
   const state: typeof initialState = { 
@@ -129,3 +176,9 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<ProfileComponent />, div);
 });
+
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<CardContainer />, div);
+});
+
