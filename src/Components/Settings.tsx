@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import { Row, Container, Col, Form, FormGroup, Card, CardBody, CardSubtitle, CardText, CardTitle, CardImg, Label, Input, Button } from 'reactstrap';
+import { Row, Container, Col, Form, FormGroup, Card, CardBody, CardSubtitle, CardText, CardTitle, CardImg, Label, Input, Button, FormText } from 'reactstrap';
 import thumbnail from '../thumbnails-z1-1.png';
 import '../Styles/Settings.css'
 import axios from 'axios';
@@ -14,6 +14,7 @@ class SettingsComponent extends Component<any, any> {
             password: ' ',
             displayname: ' ',
             email: ' ',
+            loginToken: ' ',
             currUser : [],
             validate: {
                 emailState: ' '
@@ -25,11 +26,15 @@ class SettingsComponent extends Component<any, any> {
     //TODO
     //Render form for updating profile information
     componentDidMount() {
-        const userName = "kai";
-        axios.get('http://localhost:3000/api/users/kai').then(resp => {
+        axios.get('http://localhost:3000/api/users/johncena').then(resp => {
             console.log(resp);
             this.setState({ currUser: resp.data.data });
         })
+        axios.post('http://localhost:3000/api/users/authenticate', { userName: "johncena", password: "12345" })
+            .then(resp => {
+                console.log(resp);
+                this.setState({ loginToken: resp.data.loginToken });
+            })
     }
 
     renderProfileCard() {
@@ -50,7 +55,7 @@ class SettingsComponent extends Component<any, any> {
         
        
         updateUser() {
-            const userObject = { loginToken: " ", user: { userName: "kai", displayName: "Jared", email: "revature@revature.net", profileImg: "undefined"}};
+            const userObject = { loginToken: this.state.loginToken, user: { userName: "johncena", displayName: this.state.displayname, email: this.state.email, profileImg: "undefined"}};
             axios.put('http://localhost:3000/api/users', userObject).then(resp => console.log(resp));
         }
 
@@ -93,18 +98,13 @@ class SettingsComponent extends Component<any, any> {
             <div id="update-settings-form">
             <Form className="form" onSubmit={(e) => this.submitForm(e)} >
               <FormGroup>
-                <Label for="exampleEmail">Update Settings</Label>                
+                <Label id="update-form-top-label" for="exampleEmail">Update Settings</Label>                
               </FormGroup>
 
               <FormGroup>
-                  <Label for="username">Username</Label>
-                  //TODO --= Change to text field
-                  <Input
-                  type="text"
-                  name="username"
-                  id="username"
-                  onChange = {(e) => this.setState({ username: e.target.value })}
-                  />
+                  <Label for="username">Username:   </Label>
+                  <FormText>       johncena</FormText>
+                  
               </FormGroup>
 
               <FormGroup>
