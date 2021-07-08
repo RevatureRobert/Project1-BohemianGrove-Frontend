@@ -55,7 +55,6 @@ const NavigationBar = (props: any) => {
                   <DropdownItem href="/logout">
                       Logout
                   </DropdownItem>
-                  
                 </DropdownMenu>
               </UncontrolledDropdown>
           </Nav>

@@ -17,14 +17,14 @@ class SplashComponent extends React.Component<any, any>{
         super(props);
     }
 
-    signinClick(){
-        this.props.history.push("/signin");
-    }
+    // signinClick(){
+    //     this.props.history.push("/signin");
+    // }
 
-    signupClick()
-    {
-        this.props.history.push("/signup");
-    }
+    // signupClick()
+    // {
+    //     this.props.history.push("/signup");
+    // }
     
 
     render() {

@@ -39,13 +39,13 @@
     font-size: 35px;
     overflow: hidden;
     background-color: #212529;
-    border-right: .15em solid purple;
+    /* border-right: .15em solid purple; */
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: .15em;
     animation:
         typing 6s steps(40, end),
-        blink-caret .75s step-end infinite;
+        blink-caret .75s step-end 8;
 }
 
 @keyframes typing {
