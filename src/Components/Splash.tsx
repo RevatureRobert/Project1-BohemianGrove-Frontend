@@ -33,7 +33,7 @@ class SplashComponent extends React.Component<any, any>{
         <div id="parent-div">
                 <div id ="splash-div" className= "splash-component">
         
-                    <h1 id="splash-header">Welcome to Bohemian Grove, the #1 social media site for conspiracy theorists. Join us!
+                    <h1 id="splash-header">Welcome to Bohemian Grove, the social media site for conspiracy theorists
                     </h1>
                     
                 </div> 

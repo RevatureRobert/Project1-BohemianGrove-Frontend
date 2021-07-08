@@ -100,6 +100,7 @@ class SignInComponent extends Component<any, any> {
           </FormGroup>
           <div className="signInButtonsContainer">
             <Button id="submit-button">Submit</Button>
+            {/* <Link id="redirect-new-user" to="/signup">New User? Start here.</Link> */}
             <Button id="submit-button">Demo Login</Button>
           </div>
       </Form>
