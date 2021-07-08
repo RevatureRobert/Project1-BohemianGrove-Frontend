@@ -12,10 +12,12 @@ import { string } from 'yargs';
 import axios from 'axios';
 
 
+
 class Feed extends Component<any, any> {
 
     // const[postsList, setPostsList] = useState([]);
     // const[newInput, setNewInput] = useState(null);
+
 
     constructor(props){
         super(props);
@@ -27,15 +29,22 @@ class Feed extends Component<any, any> {
 
       
 
-      componentDidUpdate() {
-          console.error();
-          
+    async componentDidUpdate() {
+        let posts: string[] = [];
+        //this.setState({ postsList : initialState.user});
+        const res =  await axios.get('http://localhost:3000/api/posts').then(res => {
+            console.log(res.data);
+            res.data.forEach(post => posts.push(post)); 
+            posts.reverse();
+            this.setState({ postsList : posts });
+        });
       }
 
     async componentDidMount() {
         //TODO
         //Fetch posts from endpoint and pass to state
         let posts: string[] = [];
+        //this.setState({ postsList : initialState.user});
         const res =  await axios.get('http://localhost:3000/api/posts').then(res => {
             console.log(res.data);
             res.data.forEach(post => posts.push(post)); 
@@ -84,7 +93,7 @@ class Feed extends Component<any, any> {
             //Send Post request to server
             let currTime = new Date().toLocaleString();
             const postBody = { post: { userName: "JohnCena", displayName: 'NowYouSeeMeNowYouDont', displayImg: 'undefined',
-                 postBody: 'Wrestlemania 2021: MetLife Stadium', postImg: 'undefined'}};
+                 postBody: this.state.newInput, postImg: 'undefined'}};
 
             axios.post('http://localhost:3000/api/posts', postBody).then(resp => console.log(resp));
         }
@@ -98,7 +107,11 @@ class Feed extends Component<any, any> {
                         <CardTitle id="new-card-title" tag="h5">Add new: </CardTitle>
                         <FormGroup>
                             <Label for="exampleText">What's on your mind?</Label>
-                            <Input type="textarea" name="text" id="exampleText" />
+                            <Input 
+                                type="textarea" 
+                                name="text" 
+                                id="exampleText" 
+                                onChange={(e) => this.setState({ newInput: e.target.value })}/>
                         </FormGroup>
                         <Button onClick={() => this.createPost()} id="post-button" color="primary">Post</Button>
                     </CardBody>
