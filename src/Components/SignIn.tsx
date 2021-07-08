@@ -4,6 +4,10 @@ import '../Styles/SignIn.css';
 import { Component } from 'react';
 import { Link, Route, Switch } from "react-router-dom";
 import SignUpComponent from './SignUp';
+<<<<<<< HEAD
+=======
+import { withRouter } from 'react-router';
+>>>>>>> mohamed-hassan
 
 import {
   Button,
@@ -14,6 +18,10 @@ import {
   FormFeedback,
   Badge
 } from 'reactstrap';
+<<<<<<< HEAD
+=======
+import axios from 'axios';
+>>>>>>> mohamed-hassan
 
 
 
@@ -21,7 +29,11 @@ class SignInComponent extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
+<<<<<<< HEAD
       email: '',
+=======
+      username: '',
+>>>>>>> mohamed-hassan
       password: '',
       validate: {
         emailState: '',
@@ -30,6 +42,14 @@ class SignInComponent extends Component<any, any> {
     this.handleChange = this.handleChange.bind(this);
   }
 
+<<<<<<< HEAD
+=======
+  //
+  //TODO
+  //Update redux store's login Token by calling GET /api/users/authenticate
+  //
+
+>>>>>>> mohamed-hassan
   handleChange = (event) => {
     const { target } = event;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -57,12 +77,23 @@ class SignInComponent extends Component<any, any> {
 
   submitForm(e) {
     e.preventDefault();
+<<<<<<< HEAD
     console.log(`Email: ${this.state.email}`);
+=======
+
+    const auth = { userName : "johncena", password: "12345"}
+    axios.post('http://localhost:3000/api/users/authenticate', auth).then(resp => console.log(resp)).then(this.props.history.push('/feed'));
+    console.log(`Username: ${this.state.username}, Password: ${this.state.password}`);
+>>>>>>> mohamed-hassan
   }
   render() {
     const { email, password } = this.state;
     return (
+<<<<<<< HEAD
       <div className="App">
+=======
+      <div id="sign-in-div" className="App">
+>>>>>>> mohamed-hassan
         <h2>Bohemian Grove</h2>
         <Form className="form" onSubmit={(e) => this.submitForm(e)}>
         <FormGroup>
@@ -72,6 +103,10 @@ class SignInComponent extends Component<any, any> {
                   name="username"
                   id="username"
                   placeholder="Login"
+<<<<<<< HEAD
+=======
+                  onChange={e => this.setState({ username: e.target.value})}
+>>>>>>> mohamed-hassan
                   />
               </FormGroup>
           <FormGroup>
@@ -81,6 +116,10 @@ class SignInComponent extends Component<any, any> {
               name="password"
               id="examplePassword"
               placeholder="********"
+<<<<<<< HEAD
+=======
+              onChange={e => this.setState({ password: e.target.value})}
+>>>>>>> mohamed-hassan
             />
           </FormGroup>
         <Button id="submit-button">Submit</Button>
@@ -98,7 +137,11 @@ class SignInComponent extends Component<any, any> {
 }
 }
 
+<<<<<<< HEAD
 export default SignInComponent;
+=======
+export default withRouter(SignInComponent);
+>>>>>>> mohamed-hassan
 
 
 

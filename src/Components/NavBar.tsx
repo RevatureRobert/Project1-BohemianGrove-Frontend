@@ -28,7 +28,11 @@ const NavigationBar = (props: any) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="container-fluid" navbar>
+<<<<<<< HEAD
             <NavItem class="ml-auto">
+=======
+            <NavItem className="ml-auto">
+>>>>>>> mohamed-hassan
               <NavLink id="redirect-to-account" href="/signin">Account</NavLink>
             </NavItem>
             <NavItem>
@@ -42,8 +46,13 @@ const NavigationBar = (props: any) => {
                 <DropdownItem href="/settings">
                   Settings
                 </DropdownItem>
+<<<<<<< HEAD
                 <DropdownItem href="/profile">
                   Profile
+=======
+                <DropdownItem href="/feed">
+                  Feed
+>>>>>>> mohamed-hassan
                 </DropdownItem>
                 <DropdownItem href="/logout">
                     Logout

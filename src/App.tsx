@@ -26,7 +26,12 @@ class App extends Component<any, any> {
     return (
       
         <div>
+<<<<<<< HEAD
           <NavigationBar />
+=======
+       <NavigationBar />
+
+>>>>>>> mohamed-hassan
         <Router>
           <Switch>
             <Route path="/signin">
@@ -37,13 +42,21 @@ class App extends Component<any, any> {
             </Route>
             <Route path="/feed">
               <Feed />
+<<<<<<< HEAD
             </Route> 
+=======
+            </Route>
+>>>>>>> mohamed-hassan
             <Route path="/settings">
               <SettingsComponent />
             </Route>
             <Route path="/profile">
               <ProfileComponent />
             </Route>
+<<<<<<< HEAD
+=======
+            
+>>>>>>> mohamed-hassan
           </Switch>
         </Router>
         </div>

@@ -7,10 +7,21 @@ import {
   Form,
   FormGroup,
   Input,
+<<<<<<< HEAD
   Label,
   FormFeedback
 } from 'reactstrap';
 import { render } from 'react-dom';
+=======
+  Label, Container, Row, Col
+} from 'reactstrap';
+import { render } from 'react-dom';
+import axios from 'axios';
+import  { Redirect } from 'react-router-dom'
+import { withRouter } from "react-router";
+
+
+>>>>>>> mohamed-hassan
 
 class SignUpComponent extends Component<any, any> {
     constructor(props) {
@@ -20,6 +31,10 @@ class SignUpComponent extends Component<any, any> {
         displayname: ' ',
         password: ' ',
         email: ' ',
+<<<<<<< HEAD
+=======
+        isUser: false,
+>>>>>>> mohamed-hassan
         validate: {
             emailState: ' ',
         },
@@ -54,15 +69,51 @@ class SignUpComponent extends Component<any, any> {
 
       submitForm(e) {
         e.preventDefault();
+<<<<<<< HEAD
         console.log(`Email: ${this.state.email}`);
+=======
+        
+        const createNewUser = { user :
+          { userName: this.state.username, displayName : this.state.displayname, password: this.state.password, email: this.state.email }
+        };
+        axios.post('http://localhost:3000/api/users', createNewUser)
+              .then(resp => console.log(resp))
+              .then(this.props.history.push('/feed'));
+              
+
+        console.log(`Email: ${this.state.email}, Username: ${this.state.username}, Password: ${this.state.password}, Displayname: ${this.state.displayname}`);
+
+        this.setState({ isUser: true});
+        //TODO
+        //Redirect to global feed
+        this.renderLogin();
+        
+      }
+
+      renderLogin() {
+
+        if(this.state.isUser) {
+        return (
+          <Button color="success" id="redirect-from-signup" href = "/feed">Login!</Button>
+        )
+        } else {
+          return <div></div>
+        }
+>>>>>>> mohamed-hassan
       }
       
       render() {
         const { username, displayname, password, email } = this.state;
         return (
+<<<<<<< HEAD
           <div className="SignUpComponent">
             <h2>Bohemian Grove</h2>
             <Form className="form" onSubmit={(e) => this.submitForm(e)}>
+=======
+          <div id="sign-up-form" className="SignUpComponent">
+            <h2>Bohemian Grove</h2>
+            <Form className="form" onSubmit={(e) => this.submitForm(e)} >
+>>>>>>> mohamed-hassan
 
               <FormGroup>
                 <Label for="exampleEmail">Email</Label>
@@ -77,6 +128,10 @@ class SignUpComponent extends Component<any, any> {
                   onChange={(e) => {
                     this.validateEmail(e);
                     this.handleChange(e);
+<<<<<<< HEAD
+=======
+                    this.setState({ email: e.target.value });
+>>>>>>> mohamed-hassan
                   }}
                 />
               </FormGroup>
@@ -88,6 +143,10 @@ class SignUpComponent extends Component<any, any> {
                   name="password"
                   id="examplePassword"
                   placeholder="********"
+<<<<<<< HEAD
+=======
+                  onChange = {(e) => this.setState({ password: e.target.value })}
+>>>>>>> mohamed-hassan
                 />
               </FormGroup>
 
@@ -97,6 +156,10 @@ class SignUpComponent extends Component<any, any> {
                   type="text"
                   name="handle"
                   id="displayName"
+<<<<<<< HEAD
+=======
+                  onChange = {(e) => this.setState({ displayname: e.target.value })}
+>>>>>>> mohamed-hassan
                   />
               </FormGroup>
 
@@ -106,13 +169,37 @@ class SignUpComponent extends Component<any, any> {
                   type="text"
                   name="username"
                   id="username"
+<<<<<<< HEAD
                   />
               </FormGroup>
             <Button id="submit-button">Submit</Button>
+=======
+                  onChange = {(e) => this.setState({ username: e.target.value })}
+                  />
+              </FormGroup>
+            <Row>
+              <Col>
+              <Button color="primary" id="submit-button" onSubmit={(e) => this.submitForm(e)}  >Submit</Button>
+
+              </Col>
+              <Col>
+              <div id="redirect-from-signup">
+              {this.renderLogin()}
+              
+              </div>
+            
+              </Col>
+            </Row>
+            
+>>>>>>> mohamed-hassan
           </Form>
         </div>
       );
                 }
   }
 
+<<<<<<< HEAD
 export default SignUpComponent;
+=======
+export default withRouter(SignUpComponent);
+>>>>>>> mohamed-hassan

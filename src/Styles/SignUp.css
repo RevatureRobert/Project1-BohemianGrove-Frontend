@@ -1,5 +1,10 @@
 .SignUpComponent {
     border: 2px solid #d3d3d3;
+<<<<<<< HEAD
+=======
+    opacity: 1.0;
+    background-color: 'white';
+>>>>>>> mohamed-hassan
     border-radius: .5em;
     margin-bottom: 1em;
     margin-left: auto;
@@ -14,6 +19,20 @@
   .form {
     padding: 1em;
   }
+<<<<<<< HEAD
+=======
+
+  #sign-up-form{
+    opacity: 1.0;
+    background-color: white;    /* Fully opaque */
+  }
+
+  #redirect-from-signup{
+    margin-top: .5em;
+    color:whitesmoke;
+    width: 250px;
+  }
+>>>>>>> mohamed-hassan
   
   label {
     font-weight: 600;
@@ -33,6 +52,10 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+<<<<<<< HEAD
+=======
+    background-image: none;
+>>>>>>> mohamed-hassan
   }
   
   .SignUpComponent-link {

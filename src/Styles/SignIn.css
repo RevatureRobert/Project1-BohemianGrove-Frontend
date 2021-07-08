@@ -8,6 +8,11 @@
     padding: 1em;
     text-align: left;
     width: 600px;
+<<<<<<< HEAD
+=======
+    opacity: 1.0;
+    background-color: white;    /* Fully opaque */
+>>>>>>> mohamed-hassan
     
   }
 
@@ -24,6 +29,14 @@
     background-color: forestgreen;
   }
 
+<<<<<<< HEAD
+=======
+  #sign-in-div{
+    opacity: 1.0;
+    background-color: white;    /* Fully opaque */
+  }
+
+>>>>>>> mohamed-hassan
   #redirect-new-user {
       margin-left: 1em;
       text-align: center;
