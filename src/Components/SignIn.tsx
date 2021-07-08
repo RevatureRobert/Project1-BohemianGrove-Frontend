@@ -77,6 +77,7 @@ class SignInComponent extends Component<any, any> {
         <Form className="form" onSubmit={(e) => this.submitForm(e)}>
         <FormGroup>
                   <Label for="username">Username</Label>
+   
                   <Input
                   type="text"
                   name="username"
@@ -85,8 +86,10 @@ class SignInComponent extends Component<any, any> {
                   onChange={e => this.setState({ username: e.target.value})}
                   />
               </FormGroup>
+              <p></p>
           <FormGroup>
             <Label for="examplePassword">Password</Label>
+          
             <Input
               type="password"
               name="password"
@@ -95,12 +98,10 @@ class SignInComponent extends Component<any, any> {
               onChange={e => this.setState({ password: e.target.value})}
             />
           </FormGroup>
-        <Button id="submit-button">Submit</Button>
-        
-            <Link id="redirect-new-user" to="/signup">New User? Start here.</Link>
-        
-        
-        
+          <div className="signInButtonsContainer">
+            <Button id="submit-button">Submit</Button>
+            <Button id="submit-button">Demo Login</Button>
+          </div>
       </Form>
       <Route exact path='/signup' component={SignUpComponent} />
       

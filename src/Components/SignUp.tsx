@@ -112,7 +112,7 @@ class SignUpComponent extends Component<any, any> {
                   }}
                 />
               </FormGroup>
-
+                    <p></p>
               <FormGroup>
                 <Label for="examplePassword">Password</Label>
                 <Input
@@ -123,7 +123,7 @@ class SignUpComponent extends Component<any, any> {
                   onChange = {(e) => this.setState({ password: e.target.value })}
                 />
               </FormGroup>
-
+                    <p></p>
               <FormGroup>
                   <Label for="displayName">Handle</Label>
                   <Input
@@ -133,7 +133,7 @@ class SignUpComponent extends Component<any, any> {
                   onChange = {(e) => this.setState({ displayname: e.target.value })}
                   />
               </FormGroup>
-
+                    <p></p>
               <FormGroup>
                   <Label for="username">Username</Label>
                   <Input
@@ -145,8 +145,7 @@ class SignUpComponent extends Component<any, any> {
               </FormGroup>
             <Row>
               <Col>
-              <Button color="primary" id="submit-button" onSubmit={(e) => this.submitForm(e)}  >Submit</Button>
-
+              <Button id="submit-button" onSubmit={(e) => this.submitForm(e)}  >Submit</Button>
               </Col>
               <Col>
               <div id="redirect-from-signup">

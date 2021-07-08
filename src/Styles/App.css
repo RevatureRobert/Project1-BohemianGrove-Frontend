@@ -73,3 +73,18 @@ label {
 .root{
   z-index: 10;
 }
+
+* {
+  color: antiquewhite;
+  font-family: "Bad Script"
+}
+
+
+a:link{
+  font-size: 22px;
+  text-decoration: none;
+}
+
+a{
+  color: antiquewhite;
+}

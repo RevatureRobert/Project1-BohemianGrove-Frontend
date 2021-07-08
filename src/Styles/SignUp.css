@@ -19,7 +19,8 @@
 
   #sign-up-form{
     opacity: 1.0;
-    background-color: white;    /* Fully opaque */
+    background-color: #212529;
+    /* Fully opaque */
   }
 
   #redirect-from-signup{
