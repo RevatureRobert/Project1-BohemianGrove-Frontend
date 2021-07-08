@@ -1,9 +1,12 @@
 import React from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Component } from "react";
 
 class ProfileComponent extends Component<any,any> {
 =======
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
 import { Component, useState } from "react";
 import { ListGroup, Card, CardBody, CardImg, Container, CardTitle, CardSubtitle, CardText,
         Nav, NavItem, NavLink, TabContent, Row, Col, TabPane, Button } from 'reactstrap';
@@ -56,14 +59,20 @@ class ProfileComponent extends Component<any,any> {
 
             ));
     }
+<<<<<<< HEAD
 >>>>>>> mohamed-hassan
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
 
     render() {
         return (
-            <div>
+            <div className="globalFeedContainer">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
             <Row>
                 <Col>
                 //TODO
@@ -75,18 +84,23 @@ class ProfileComponent extends Component<any,any> {
                 </Col>
                 <Col>
                 <h4>User History</h4>
-
+                
+                <div >
                 <Container>
                     <ListGroup>
                         {this.renderItems()}
                     </ListGroup>
                 </Container>
+                </div>
             
                 </Col>
 
             </Row>
                 
+<<<<<<< HEAD
 >>>>>>> mohamed-hassan
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
             </div>
         )
     }

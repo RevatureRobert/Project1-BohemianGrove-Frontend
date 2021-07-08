@@ -1,29 +1,39 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import CardContainer from '../Components/Card';
 =======
 import React, { useState } from 'react';
 import CardContainer from './Card';
 >>>>>>> mohamed-hassan
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
 import { Component } from 'react';
 import { Card, ListGroup, ListGroupItem, 
         CardBody, CardImg, CardTitle, 
         CardSubtitle, CardText, FormGroup,
         Label, Input, Button } from 'reactstrap';
-import { render } from '@testing-library/react';
 import '../Styles/Card.css';
 import thumbnail from '../thumbnails-z1-1.png';
+<<<<<<< HEAD
 import { string } from 'yargs';
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
 import axios from 'axios';
+import '../Styles/Feed.css';
 import { connect } from 'react-redux';
 
+<<<<<<< HEAD
 >>>>>>> mohamed-hassan
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
 
 
 class Feed extends Component<any, any> {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     constructor(props){
         super(props);
@@ -98,6 +108,8 @@ class Feed extends Component<any, any> {
             // onChange={(event) => this.updateNewInput(event.target.value) }
             <div >
 =======
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
     // const[postsList, setPostsList] = useState([]);
     // const[newInput, setNewInput] = useState(null);
 
@@ -184,19 +196,26 @@ class Feed extends Component<any, any> {
 
     render() {
         return(
+<<<<<<< HEAD
             <div key={this.state.index}>
 >>>>>>> mohamed-hassan
 
+=======
+            <div className="globalFeedContainer" key={this.state.index}>
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
                 <Card id="AddPostContainer">
                     <CardBody>
                         <CardTitle id="new-card-title" tag="h5">Add new: </CardTitle>
                         <FormGroup>
                             <Label for="exampleText">What's on your mind?</Label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <Input type="textarea" name="text" id="exampleText" />
                         </FormGroup>
                         <Button id="post-button" color="primary">Post</Button>
 =======
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
                             <Input 
                                 type="textarea" 
                                 name="text" 
@@ -204,7 +223,10 @@ class Feed extends Component<any, any> {
                                 onChange={(e) => this.setState({ newInput: e.target.value })}/>
                         </FormGroup>
                         <Button onClick={() => this.createPost()} id="post-button" color="primary">Post</Button>
+<<<<<<< HEAD
 >>>>>>> mohamed-hassan
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
                     </CardBody>
                 </Card>
             
@@ -219,9 +241,15 @@ class Feed extends Component<any, any> {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default Feed;
 =======
 export default connect(
     null, {}
 ) (Feed);
 >>>>>>> mohamed-hassan
+=======
+export default connect(
+    null, {}
+) (Feed);
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d

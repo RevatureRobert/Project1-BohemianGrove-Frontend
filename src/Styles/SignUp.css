@@ -1,10 +1,15 @@
 .SignUpComponent {
     border: 2px solid #d3d3d3;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     opacity: 1.0;
     background-color: 'white';
 >>>>>>> mohamed-hassan
+=======
+    opacity: 1.0;
+    background-color: 'white';
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
     border-radius: .5em;
     margin-bottom: 1em;
     margin-left: auto;
@@ -20,11 +25,15 @@
     padding: 1em;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
 
   #sign-up-form{
     opacity: 1.0;
-    background-color: white;    /* Fully opaque */
+    background-color: #212529;
+    /* Fully opaque */
   }
 
   #redirect-from-signup{
@@ -32,7 +41,10 @@
     color:whitesmoke;
     width: 250px;
   }
+<<<<<<< HEAD
 >>>>>>> mohamed-hassan
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
   
   label {
     font-weight: 600;
@@ -53,9 +65,13 @@
     font-size: calc(10px + 2vmin);
     color: white;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     background-image: none;
 >>>>>>> mohamed-hassan
+=======
+    background-image: none;
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
   }
   
   .SignUpComponent-link {
