@@ -25,32 +25,30 @@ class App extends Component<any, any> {
   render() {
     return (
       
-        <div>
+      <div>
        <NavigationBar />
 
-        <Router>
           <Switch>
-            <Route path="/splash">
+            <Route exact path="/">
               <SplashComponent />
             </Route>
-            <Route path="/signin">
+            <Route exact path="/signin">
               <SignInComponent />
             </Route>
-            <Route path="/signup">
+            <Route exact path="/signup">
               <SignUpComponent />
             </Route>
-            <Route path="/feed">
+            <Route exact path="/feed">
               <Feed />
             </Route>
-            <Route path="/settings">
+            <Route exact path="/settings">
               <SettingsComponent />
             </Route>
-            <Route path="/profile">
+            <Route exact path="/profile">
               <ProfileComponent />
             </Route>
-            
           </Switch>
-        </Router>
+
         </div>
       
     )
