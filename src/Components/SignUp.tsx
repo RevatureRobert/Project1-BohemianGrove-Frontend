@@ -7,6 +7,18 @@ import {
   Form,
   FormGroup,
   Input,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  Label,
+  FormFeedback
+} from 'reactstrap';
+import { render } from 'react-dom';
+=======
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
   Label, Container, Row, Col
 } from 'reactstrap';
 import { render } from 'react-dom';
@@ -15,6 +27,13 @@ import  { Redirect } from 'react-router-dom'
 import { withRouter } from "react-router";
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> mohamed-hassan
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
 
 class SignUpComponent extends Component<any, any> {
     constructor(props) {
@@ -24,7 +43,18 @@ class SignUpComponent extends Component<any, any> {
         displayname: ' ',
         password: ' ',
         email: ' ',
+<<<<<<< HEAD
         isUser: false,
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        isUser: false,
+>>>>>>> mohamed-hassan
+=======
+        isUser: false,
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
         validate: {
             emailState: ' ',
         },
@@ -59,6 +89,15 @@ class SignUpComponent extends Component<any, any> {
 
       submitForm(e) {
         e.preventDefault();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+        console.log(`Email: ${this.state.email}`);
+=======
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
         
         const createNewUser = { user :
           { userName: this.state.username, displayName : this.state.displayname, password: this.state.password, email: this.state.email }
@@ -86,14 +125,39 @@ class SignUpComponent extends Component<any, any> {
         } else {
           return <div></div>
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> mohamed-hassan
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
       }
       
       render() {
         const { username, displayname, password, email } = this.state;
         return (
+<<<<<<< HEAD
           <div id="sign-up-form" className="SignUpComponent">
             <h2>Bohemian Grove</h2>
             <Form className="form" onSubmit={(e) => this.submitForm(e)} >
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+          <div className="SignUpComponent">
+            <h2>Bohemian Grove</h2>
+            <Form className="form" onSubmit={(e) => this.submitForm(e)}>
+=======
+          <div id="sign-up-form" className="SignUpComponent">
+            <h2>Bohemian Grove</h2>
+            <Form className="form" onSubmit={(e) => this.submitForm(e)} >
+>>>>>>> mohamed-hassan
+=======
+          <div id="sign-up-form" className="SignUpComponent">
+            <h2>Bohemian Grove</h2>
+            <Form className="form" onSubmit={(e) => this.submitForm(e)} >
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
 
               <FormGroup>
                 <Label for="exampleEmail">Email</Label>
@@ -108,11 +172,22 @@ class SignUpComponent extends Component<any, any> {
                   onChange={(e) => {
                     this.validateEmail(e);
                     this.handleChange(e);
+<<<<<<< HEAD
                     this.setState({ email: e.target.value });
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                    this.setState({ email: e.target.value });
+>>>>>>> mohamed-hassan
+=======
+                    this.setState({ email: e.target.value });
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
                   }}
                 />
               </FormGroup>
-
+                    <p></p>
               <FormGroup>
                 <Label for="examplePassword">Password</Label>
                 <Input
@@ -120,33 +195,65 @@ class SignUpComponent extends Component<any, any> {
                   name="password"
                   id="examplePassword"
                   placeholder="********"
+<<<<<<< HEAD
                   onChange = {(e) => this.setState({ password: e.target.value })}
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                  onChange = {(e) => this.setState({ password: e.target.value })}
+>>>>>>> mohamed-hassan
+=======
+                  onChange = {(e) => this.setState({ password: e.target.value })}
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
                 />
               </FormGroup>
-
+                    <p></p>
               <FormGroup>
                   <Label for="displayName">Handle</Label>
                   <Input
                   type="text"
                   name="handle"
                   id="displayName"
+<<<<<<< HEAD
                   onChange = {(e) => this.setState({ displayname: e.target.value })}
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                  onChange = {(e) => this.setState({ displayname: e.target.value })}
+>>>>>>> mohamed-hassan
+=======
+                  onChange = {(e) => this.setState({ displayname: e.target.value })}
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
                   />
               </FormGroup>
-
+                    <p></p>
               <FormGroup>
                   <Label for="username">Username</Label>
                   <Input
                   type="text"
                   name="username"
                   id="username"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  />
+              </FormGroup>
+            <Button id="submit-button">Submit</Button>
+=======
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
                   onChange = {(e) => this.setState({ username: e.target.value })}
                   />
               </FormGroup>
             <Row>
               <Col>
-              <Button color="primary" id="submit-button" onSubmit={(e) => this.submitForm(e)}  >Submit</Button>
-
+              <Button id="submit-button" onSubmit={(e) => this.submitForm(e)}  >Submit</Button>
               </Col>
               <Col>
               <div id="redirect-from-signup">
@@ -157,10 +264,29 @@ class SignUpComponent extends Component<any, any> {
               </Col>
             </Row>
             
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> mohamed-hassan
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
           </Form>
         </div>
       );
                 }
   }
 
+<<<<<<< HEAD
 export default withRouter(SignUpComponent);
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+export default SignUpComponent;
+=======
+export default withRouter(SignUpComponent);
+>>>>>>> mohamed-hassan
+=======
+export default withRouter(SignUpComponent);
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main

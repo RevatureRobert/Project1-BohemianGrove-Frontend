@@ -1,5 +1,19 @@
 import React from "react";
 import { Component } from "react";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+class SettingsComponent extends Component<any, any> {
+
+    render() {
+        return(
+            <div>
+=======
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
 import { Row, Container, Col, Form, FormGroup, Card, CardBody, CardSubtitle, CardText, CardTitle, CardImg, Label, Input, Button, FormText } from 'reactstrap';
 import thumbnail from '../thumbnails-z1-1.png';
 import '../Styles/Settings.css'
@@ -149,6 +163,13 @@ class SettingsComponent extends Component<any, any> {
             </div>
                     </Col>
                 </Row>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> mohamed-hassan
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
 
             </div>
         )

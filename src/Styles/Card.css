@@ -56,9 +56,21 @@
         padding: 2px;
 
     }
+
     #post-button {
         background-color:darkorchid;
         margin-top: 6px;
         margin-bottom: 2px;
+    }
 
+    .card-body{
+        background-color: #212529;
+    }
+
+    div.card{
+        background-color: #212529;
+    }
+
+    p#timestamp.card-text{
+        font-size: 18px;
     }

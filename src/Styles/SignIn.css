@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .SignInComponent {
     border: 2px solid #d3d3d3;
     border-radius: .5em;
@@ -8,8 +9,16 @@
     padding: 1em;
     text-align: left;
     width: 600px;
+<<<<<<< HEAD
     opacity: 1.0;
     background-color: white;    /* Fully opaque */
+=======
+<<<<<<< HEAD
+=======
+    opacity: 1.0;
+    background-color: white;    /* Fully opaque */
+>>>>>>> mohamed-hassan
+>>>>>>> main
     
   }
 
@@ -26,11 +35,20 @@
     background-color: forestgreen;
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> main
   #sign-in-div{
     opacity: 1.0;
     background-color: white;    /* Fully opaque */
   }
 
+<<<<<<< HEAD
+=======
+>>>>>>> mohamed-hassan
+>>>>>>> main
   #redirect-new-user {
       margin-left: 1em;
       text-align: center;
@@ -51,3 +69,20 @@
     color: #61dafb;
   }
   
+=======
+#sign-in-div {
+  opacity: 1.0;
+  background-color:#212529;
+  /* Fully opaque */
+}
+
+#redirect-new-user {
+  margin-left: 1em;
+  text-align: center;
+}
+
+.signInButtonsContainer{
+  display: flex;
+  justify-content: space-between;
+}
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d

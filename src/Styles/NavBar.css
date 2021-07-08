@@ -4,6 +4,25 @@
 }
 
 #logo-text {
-    font-weight: bold;
-    size: 12px;
+    margin-left: 50px;
 }
+
+#logo-text:hover{
+    color: plum;
+}
+.dropdown-menu.show {
+    background-color:#212529;
+    color: antiquewhite;
+}
+
+a.dropdown-item{
+    color: antiquewhite;
+}
+
+.ml-auto{
+    margin-right: 60px;
+}
+
+
+
+

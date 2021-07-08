@@ -4,12 +4,12 @@ import './Styles/App.css';
 import SignInComponent from './Components/SignIn';
 import SignUpComponent from './Components/SignUp';
 import NavigationBar from './Components/NavBar';
+import SplashComponent from './Components/Splash';
 import CardContainer from './Components/Card';
 import SettingsComponent from './Components/Settings';
 import ProfileComponent from './Components/Profile';
 import Feed from './Components/Feed';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
 import { Component } from 'react';
 import {
   Button,
@@ -25,29 +25,71 @@ class App extends Component<any, any> {
   render() {
     return (
       
+<<<<<<< HEAD
         <div>
+<<<<<<< HEAD
        <NavigationBar />
 
         <Router>
+=======
+<<<<<<< HEAD
+          <NavigationBar />
+=======
+       <NavigationBar />
+
+>>>>>>> mohamed-hassan
+        <Router>
+=======
+      <div>
+       <NavigationBar />
+
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
           <Switch>
-            <Route path="/signin">
+            <Route exact path="/">
+              <SplashComponent />
+            </Route>
+            <Route exact path="/signin">
               <SignInComponent />
             </Route>
-            <Route path="/signup">
+            <Route exact path="/signup">
               <SignUpComponent />
             </Route>
-            <Route path="/feed">
+            <Route exact path="/feed">
               <Feed />
+<<<<<<< HEAD
             </Route>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            </Route> 
+=======
+            </Route>
+>>>>>>> mohamed-hassan
+>>>>>>> main
             <Route path="/settings">
+=======
+            </Route>
+            <Route exact path="/settings">
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
               <SettingsComponent />
             </Route>
-            <Route path="/profile">
+            <Route exact path="/profile">
               <ProfileComponent />
             </Route>
+<<<<<<< HEAD
             
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            
+>>>>>>> mohamed-hassan
+=======
+>>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
+>>>>>>> main
           </Switch>
-        </Router>
+
         </div>
       
     )
