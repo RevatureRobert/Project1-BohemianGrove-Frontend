@@ -10,9 +10,7 @@
     transform: translate(-50%, -50%);
 }
 
-#splash-div{
-    background-color:#212529;
-}
+
 
 #signup-button{
     float: right;
@@ -31,16 +29,19 @@
     background-color: white;
 }
 
+
 #splash-header {
     color: antiquewhite;
+    font-weight: bolder;
     font-size: 35px;
     overflow: hidden;
-    border-right: .15em solid orange;
+    background-color: #212529;
+    border-right: .15em solid purple;
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: .15em;
     animation:
-        typing 5s steps(40, end),
+        typing 6s steps(40, end),
         blink-caret .75s step-end infinite;
 }
 
@@ -56,10 +57,11 @@
 @keyframes blink-caret {
     from,
     to {
-        border-color: transparent
+        border-color: antiquewhite
     }
     50% {
-        border-color: orange;
+        border-color: darkmagenta;
     }
 }
+
 
