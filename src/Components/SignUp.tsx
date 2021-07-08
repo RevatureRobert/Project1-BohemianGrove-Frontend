@@ -12,6 +12,8 @@ import {
 import { render } from 'react-dom';
 import axios from 'axios';
 import  { Redirect } from 'react-router-dom'
+import { withRouter } from "react-router";
+
 
 
 class SignUpComponent extends Component<any, any> {
@@ -58,8 +60,13 @@ class SignUpComponent extends Component<any, any> {
       submitForm(e) {
         e.preventDefault();
         
-        const createNewUser = { userName: 'this.state.username', displayName : 'this.state.displayname', password: 'this.state.password', email: 'this.state.email' };
-        axios.post('http://localhost:3000/api/users', createNewUser).then(resp => console.log(resp));
+        const createNewUser = { user :
+          { userName: this.state.username, displayName : this.state.displayname, password: this.state.password, email: this.state.email }
+        };
+        axios.post('http://localhost:3000/api/users', createNewUser)
+              .then(resp => console.log(resp))
+              .then(this.props.history.push('/feed'));
+              
 
         console.log(`Email: ${this.state.email}, Username: ${this.state.username}, Password: ${this.state.password}, Displayname: ${this.state.displayname}`);
 
@@ -156,4 +163,4 @@ class SignUpComponent extends Component<any, any> {
                 }
   }
 
-export default SignUpComponent;
+export default withRouter(SignUpComponent);

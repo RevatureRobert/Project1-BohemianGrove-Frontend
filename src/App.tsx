@@ -26,7 +26,8 @@ class App extends Component<any, any> {
     return (
       
         <div>
-          <NavigationBar />
+       <NavigationBar />
+
         <Router>
           <Switch>
             <Route path="/signin">

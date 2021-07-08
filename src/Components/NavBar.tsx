@@ -42,8 +42,8 @@ const NavigationBar = (props: any) => {
                 <DropdownItem href="/settings">
                   Settings
                 </DropdownItem>
-                <DropdownItem href="/profile">
-                  Profile
+                <DropdownItem href="/feed">
+                  Feed
                 </DropdownItem>
                 <DropdownItem href="/logout">
                     Logout

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CardContainer from './Card';
 import { Component } from 'react';
 import { Card, ListGroup, ListGroupItem, 
@@ -14,18 +14,20 @@ import axios from 'axios';
 
 class Feed extends Component<any, any> {
 
+    // const[postsList, setPostsList] = useState([]);
+    // const[newInput, setNewInput] = useState(null);
+
     constructor(props){
         super(props);
         this.state = {
           postsList:[],
-          newInput: ' ',
-          index: '1'
+          newInput: ' '
         };
       }
 
       
 
-      componentDidCatch() {
+      componentDidUpdate() {
           console.error();
           
       }
@@ -41,34 +43,11 @@ class Feed extends Component<any, any> {
         });
 
         
-        // for(let elem of res.data) {
-        //     posts.push(elem);
-        // }
-        
-        
-        // let posts = [
-        //     {
-        //         username: "John Smith",
-        //         handle: "JohnnyAppleSeed",
-        //         timestamp: "12.23.12:11.22.34",
-        //         img: "thumbnail",
-        //         body: "Peter Parker Piper Pan",
-        //     },
-        //     {
-        //         username: "Jane Doe",
-        //         handle: "GrabAPailOfWater",
-        //         timestamp: "11.37.23:44.48.09",
-        //         img: "thumbnail",
-        //         body: "Some random shitpost.",
-        //     }
-        // ]
-        // this.setState( {postsList : posts});
-        
     }
 
-    addNewPost() {
-        //TODO
-        //Add new post via POST endpoint
+
+    createNewDate(time) {
+        return new Date(time).toLocaleString();
     }
 
     renderItems()  {
@@ -83,7 +62,7 @@ class Feed extends Component<any, any> {
                 
               </CardBody>
               <CardText id="body">{card.postBody}</CardText>
-              <CardText id="timestamp">{card.postTime}</CardText>
+              <CardText id="timestamp">{ this.createNewDate(card.postTime)}</CardText>
             </Card>
           </div>
 
@@ -104,7 +83,7 @@ class Feed extends Component<any, any> {
             //Get user credentials from token
             //Send Post request to server
             let currTime = new Date().toLocaleString();
-            const postBody = { Post: { userName: 'JohnCena', postTime: '12.12.34', displayName: 'NowYouSeeMeNowYouDont', dispalyImg: 'undefined',
+            const postBody = { post: { userName: "JohnCena", displayName: 'NowYouSeeMeNowYouDont', displayImg: 'undefined',
                  postBody: 'Wrestlemania 2021: MetLife Stadium', postImg: 'undefined'}};
 
             axios.post('http://localhost:3000/api/posts', postBody).then(resp => console.log(resp));
@@ -112,7 +91,6 @@ class Feed extends Component<any, any> {
 
     render() {
         return(
-            // onChange={(event) => this.updateNewInput(event.target.value) }
             <div key={this.state.index}>
 
                 <Card id="AddPostContainer">
