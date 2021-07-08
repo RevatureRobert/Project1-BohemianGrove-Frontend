@@ -35,13 +35,6 @@
     "node-modules": "^1.0.1",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> mohamed-hassan
-=======
->>>>>>> 2981b61005d81a442f7d22030b3890d2489d715d
->>>>>>> main
     "typescript": "^4.3.4"
   },
   "scripts": {
