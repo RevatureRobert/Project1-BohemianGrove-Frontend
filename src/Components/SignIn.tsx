@@ -4,6 +4,7 @@ import '../Styles/SignIn.css';
 import { Component } from 'react';
 import { Link, Route, Switch } from "react-router-dom";
 import SignUpComponent from './SignUp';
+import { withRouter } from 'react-router';
 
 import {
   Button,
@@ -30,6 +31,11 @@ class SignInComponent extends Component<any, any> {
     };
     this.handleChange = this.handleChange.bind(this);
   }
+
+  //
+  //TODO
+  //Update redux store's login Token by calling GET /api/users/authenticate
+  //
 
   handleChange = (event) => {
     const { target } = event;
@@ -59,8 +65,8 @@ class SignInComponent extends Component<any, any> {
   submitForm(e) {
     e.preventDefault();
 
-    const auth = { userName : "johncena", password: "your_mom"}
-    axios.post('http://localhost:3000/api/users/authenticate', auth).then(resp => console.log(resp));
+    const auth = { userName : "johncena", password: "12345"}
+    axios.post('http://localhost:3000/api/users/authenticate', auth).then(resp => console.log(resp)).then(this.props.history.push('/feed'));
     console.log(`Username: ${this.state.username}, Password: ${this.state.password}`);
   }
   render() {
@@ -104,7 +110,7 @@ class SignInComponent extends Component<any, any> {
 }
 }
 
-export default SignInComponent;
+export default withRouter(SignInComponent);
 
 
 
