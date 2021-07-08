@@ -54,7 +54,7 @@ class ProfileComponent extends Component<any,any> {
 
     render() {
         return (
-            <div>
+            <div className="globalFeedContainer">
 
             <Row>
                 <Col>
@@ -67,12 +67,14 @@ class ProfileComponent extends Component<any,any> {
                 </Col>
                 <Col>
                 <h4>User History</h4>
-
+                
+                <div >
                 <Container>
                     <ListGroup>
                         {this.renderItems()}
                     </ListGroup>
                 </Container>
+                </div>
             
                 </Col>
 

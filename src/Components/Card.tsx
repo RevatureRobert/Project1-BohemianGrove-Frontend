@@ -5,7 +5,7 @@ import { Posts } from '../models/Posts';
 
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  CardTitle, CardSubtitle
 } from 'reactstrap';
 
 

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+// import { useHistory } from 'react-router-dom';
 import '../Styles/NavBar.css';
 import {
   Collapse,
@@ -12,12 +13,11 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText
 } from 'reactstrap';
 
 const NavigationBar = (props: any) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  // const location = useHistory().pathname;
   const toggle = () => setIsOpen(!isOpen);
     return (
       <div>
@@ -34,7 +34,7 @@ const NavigationBar = (props: any) => {
             </Nav>
           </Collapse>
           <Nav className="ml-auto" navbar>
-                <NavLink id="redirect-to-account-nav" href="/signin">Account</NavLink>
+                {/* <NavLink id="redirect-to-account-nav" href="/signin">Account</NavLink> */}
             <NavItem>
                 <NavLink href="/signup">Sign Up</NavLink>
               </NavItem>

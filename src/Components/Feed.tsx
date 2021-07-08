@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
-import CardContainer from './Card';
 import { Component } from 'react';
 import { Card, ListGroup, ListGroupItem, 
         CardBody, CardImg, CardTitle, 
         CardSubtitle, CardText, FormGroup,
         Label, Input, Button } from 'reactstrap';
-import { render } from '@testing-library/react';
 import '../Styles/Card.css';
 import thumbnail from '../thumbnails-z1-1.png';
-import { string } from 'yargs';
 import axios from 'axios';
+import '../Styles/Feed.css';
 
 
 class Feed extends Component<any, any> {
@@ -91,8 +88,7 @@ class Feed extends Component<any, any> {
 
     render() {
         return(
-            <div key={this.state.index}>
-
+            <div className="globalFeedContainer" key={this.state.index}>
                 <Card id="AddPostContainer">
                     <CardBody>
                         <CardTitle id="new-card-title" tag="h5">Add new: </CardTitle>

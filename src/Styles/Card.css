@@ -66,3 +66,11 @@
     .card-body{
         background-color: #212529;
     }
+
+    div.card{
+        background-color: #212529;
+    }
+
+    p#timestamp.card-text{
+        font-size: 18px;
+    }
