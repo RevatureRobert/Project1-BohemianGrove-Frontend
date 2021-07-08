@@ -23,7 +23,7 @@ export function reducer(state = initialState, action) {
       case "INITIAL_LOGIN":
         newState.user.userName = action.payload.username;
         newState.user.password = action.payload.password;
-        axios.get('http://localhost:3000/api/users/authenticate').then(resp => { 
+        axios.post('http://localhost:3000/api/users/authenticate').then(resp => { 
             console.log(resp.data.loginToken);
             newState.loginToken = resp.data.loginToken;
         });

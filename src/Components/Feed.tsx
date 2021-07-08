@@ -10,6 +10,7 @@ import '../Styles/Card.css';
 import thumbnail from '../thumbnails-z1-1.png';
 import { string } from 'yargs';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 
 
@@ -23,7 +24,8 @@ class Feed extends Component<any, any> {
         super(props);
         this.state = {
           postsList:[],
-          newInput: ' '
+          newInput: ' ',
+          loginToken: ' '
         };
       }
 
@@ -127,4 +129,6 @@ class Feed extends Component<any, any> {
     }
 }
 
-export default Feed;
+export default connect(
+    null, {}
+) (Feed);
