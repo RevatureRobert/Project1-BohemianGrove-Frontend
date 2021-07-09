@@ -4,9 +4,11 @@ import thunkMiddleware from "redux-thunk";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { userInfo } from 'os';
 import { create } from 'domain';
+import { AppActions, Actionables } from './Actions';
 
 const initialState = {
     loginToken: ' ',
+    data: [],
     user: {
         userName: ' ',
         displayName: ' ',
@@ -16,30 +18,36 @@ const initialState = {
     }
 }
 
+export const getToken = () => initialState.loginToken;
 
-export function reducer(state = initialState, action) {
+  const grabToken = () => {
+    
+  }
+
+ export const reducer = (state = initialState, action: AppActions) => {
     const newState = {...state};
     switch (action.type) {
-      case "INITIAL_LOGIN":
-        newState.user.userName = action.payload.username;
+      case Actionables.INITIAL_LOGIN:
+          grabToken(); 
+        return {
+          ...newState,
+        };
+      case Actionables.NEW_SIGNUP:
+        return {
+          ...state,
+          
+        };
+        case Actionables.INITIAL_LOGIN:
+          newState.user.userName = action.payload.username;
         newState.user.password = action.payload.password;
-        axios.post('http://localhost:3000/api/users/authenticate').then(resp => { 
+         axios.post('http://localhost:3000/api/users/authenticate').then(resp => { 
             console.log(resp.data.loginToken);
             newState.loginToken = resp.data.loginToken;
         });
         return {
-          ...newState,
-        };
-      case "NEW_SIGNUP":
-        return {
           ...state,
-          user: action.usersData,
-
-        };
-        case "FETCH_TOKEN":
-        return {
-          ...state,
-          user: action.usersData,
+          
+          
 
         };
       default:
@@ -48,20 +56,19 @@ export function reducer(state = initialState, action) {
   }
 
   export const requestToken = user => async dispatch => {
-      dispatch({
-          type: "FETCH_TOKEN"
-      });
+      
       try {
         let jsonToken: string = ' ';
         await axios.post('http://localhost:3000/api/users/authenticate', { 
-            userName: user.username,
-            password: user.passowrd
+            userName: user.payload.username,
+            password: user.payload.password
         }).then(resp => {
             console.log(resp)
-            jsonToken = resp.data.loginToken
         })
           dispatch({ 
-            loginToken: jsonToken
+            type: "FETCH_TOKEN"
+            
+            
         })
       } catch(err) {
           console.log(err);

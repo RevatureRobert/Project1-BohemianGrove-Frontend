@@ -112,7 +112,7 @@ describe('SignInComponent', () => {
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Router> 
+  shallow(<Router> 
                     <SignInComponent />
                   </Router>, div);
 });
@@ -164,7 +164,10 @@ describe('manage profile page test suite', () => {
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<SignUpComponent />, div);
+  ReactDOM.render(
+  <MemoryRouter>
+    <SignUpComponent />
+  </MemoryRouter>, div);
 });
 
 it('renders without crashing', () => {

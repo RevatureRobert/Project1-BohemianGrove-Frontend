@@ -6,7 +6,8 @@ export enum Actionables {
 }
 
 export interface IActionables {
-    type : Actionables
+    type : Actionables,
+    payload: { username: string }
 }
 
 export interface AppActions extends IActionables {

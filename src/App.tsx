@@ -11,6 +11,9 @@ import ProfileComponent from './Components/Profile';
 import Feed from './Components/Feed';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Component } from 'react';
+import { Provider } from 'react-redux'
+import { store } from './Redux/Store';
+
 import {
   Button,
   Form,
@@ -24,10 +27,10 @@ import {
 class App extends Component<any, any> {
   render() {
     return (
-      
+      <Provider store = { store }>
       <div>
-       <NavigationBar />
-
+        
+        <NavigationBar />
           <Switch>
             <Route exact path="/">
               <SplashComponent />
@@ -50,7 +53,7 @@ class App extends Component<any, any> {
           </Switch>
 
         </div>
-      
+      </Provider>
     )
   }
 }

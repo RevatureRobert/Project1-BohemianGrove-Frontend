@@ -5,6 +5,7 @@ import { Component } from 'react';
 import { Link, Route, Switch } from "react-router-dom";
 import SignUpComponent from './SignUp';
 import { withRouter } from 'react-router';
+import Cookies from 'universal-cookie';
 
 import {
   Button,
@@ -25,6 +26,7 @@ class SignInComponent extends Component<any, any> {
     this.state = {
       username: '',
       password: '',
+      loginToken: ' ',
       validate: {
         emailState: '',
       },
@@ -65,9 +67,15 @@ class SignInComponent extends Component<any, any> {
   submitForm(e) {
     e.preventDefault();
 
+    let loginToken;
     const auth = { userName : "johncena", password: "12345"}
-    axios.post('http://localhost:3000/api/users/authenticate', auth).then(resp => console.log(resp)).then(this.props.history.push('/feed'));
+    axios.post('http://localhost:3000/api/users/authenticate', auth).then(resp => { console.log(resp);  
+    loginToken = resp.data.data.loginToken} 
+    ).then(this.props.history.push('/feed'));
     console.log(`Username: ${this.state.username}, Password: ${this.state.password}`);
+    const cookies = new Cookies();
+    cookies.set('loginToken', loginToken);
+    console.log(cookies.get('loginToken')) ;
   }
   render() {
     const { email, password } = this.state;

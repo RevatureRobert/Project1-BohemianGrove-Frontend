@@ -7,7 +7,13 @@ import '../Styles/Card.css';
 import thumbnail from '../thumbnails-z1-1.png';
 import axios from 'axios';
 import '../Styles/Feed.css';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
+import { store } from '../Redux/Store';
+import { getToken } from '../Redux/Store';
+import { requestToken } from '../Redux/Store';
+import Cookies from 'universal-cookie';
+import { AppActions } from '../Redux/Actions';
+import { Actionables } from '../Redux/Actions'
 
 
 
@@ -22,15 +28,22 @@ class Feed extends Component<any, any> {
         this.state = {
           postsList:[],
           newInput: ' ',
-          loginToken: ' '
+          loginToken: ' ',
+          lastTimeChecked: new Date().toLocaleTimeString()
         };
       }
-
-      
+   
+    //   shouldComponentUpdate() {
+    //       let currTime = new Date().toLocaleTimeString();
+    //       return (this.state.lastTimeChecked - currTime < 0 )
+    //   }
 
     async componentDidUpdate() {
-        let posts: string[] = [];
         //this.setState({ postsList : initialState.user});
+        let posts: string[] = [];
+
+        
+
         const res =  await axios.get('http://localhost:3000/api/posts').then(res => {
             console.log(res.data);
             res.data.forEach(post => posts.push(post)); 
@@ -42,6 +55,10 @@ class Feed extends Component<any, any> {
     async componentDidMount() {
         //TODO
         //Fetch posts from endpoint and pass to state
+
+        //store.dispatch({ type: Actionables.FETCH_TOKEN, payload: { username: 'johncena', password: '12345'} });
+
+
         let posts: string[] = [];
         //this.setState({ postsList : initialState.user});
         const res =  await axios.get('http://localhost:3000/api/posts').then(res => {
@@ -125,6 +142,5 @@ class Feed extends Component<any, any> {
     }
 }
 
-export default connect(
-    null, {}
-) (Feed);
+export default class connect() (Feed);
+export default Container;
