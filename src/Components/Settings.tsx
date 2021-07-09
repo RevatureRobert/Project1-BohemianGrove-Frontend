@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Form, FormGroup, Label, FormText, Input, Button } from "reactstrap";
+import { Form, FormGroup, Label, FormText, Input, Button, Container, Row, Col } from "reactstrap";
 import { User } from "../Models/User";
 import { UserAction } from "../Redux/Actions";
 import { IAppState } from "../Redux/Store";
@@ -37,17 +37,19 @@ const Settings: React.FC = (props: any) => {
     }
 
     return (
-        <div id="update-settings-form">
-            <Form className="form" onSubmit={(e) => submitForm(e)} >
+
+        <Col className="col-sm-4">
+            <Form className="formSetting" onSubmit={(e) => submitForm(e)} >
                 <FormGroup>
                     <Label id="update-form-top-label" for="exampleEmail">Update Settings</Label>
                 </FormGroup>
 
-                <FormGroup>
+                {/* <FormGroup>
                     <Label for="username">Username:</Label>
-                    <FormText>{user?.userName}</FormText>
+                    <br />
+                    <FormText className="usernameSetting">{user?.userName}</FormText>
 
-                </FormGroup>
+                </FormGroup> */}
 
                 <FormGroup>
                     <Label for="displayName">Handle</Label>
@@ -86,7 +88,7 @@ const Settings: React.FC = (props: any) => {
 
                 <Button color="primary" id="submit-button" onSubmit={(e) => submitForm(e)}>Submit</Button>
             </Form>
-        </div>
+        </Col>
     );
 }
 

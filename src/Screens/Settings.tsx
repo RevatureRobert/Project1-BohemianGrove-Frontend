@@ -7,7 +7,8 @@ import axios from "axios";
 import Feed from "../Components/Feed";
 import SettingsComp from "../Components/Settings"
 import { IPost } from "../Models/Post";
-
+import '../Styles/Settings.css';
+import { Container, Col, Row } from "reactstrap";
 export const Settings: React.FC = (props: any) => {
     const user = useSelector((store: IAppState) => store.user);
     
@@ -24,12 +25,23 @@ export const Settings: React.FC = (props: any) => {
     useEffect(refresh, [user]);
 
     return (
-        <div className="settingDiv">
-            {!user && <Redirect to="/login"/>}
-            <User user={user}/>
-            <Feed posts={posts}/>
-            <SettingsComp/>
-        </div>
+            <div>
+                {!user && <Redirect to="/login"/>}
+                <Row>
+                    <Col className="settingCol" xs="6" sm="4">
+                        <User user={user}/>
+                    </Col>
+                    <Col className="settingCol" xs="6" sm="4">
+                        <div className="settingPostContainer">
+                            <Feed posts={posts}/>
+                        </div>
+                        
+                    </Col>
+                    <Col className="settingCol" xs="6" sm="4">
+                        <SettingsComp/>
+                    </Col>
+                </Row>
+            </div>
     );
 } 
 

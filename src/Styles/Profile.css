@@ -20,3 +20,19 @@
     background-color: whitesmoke;
     margin-top: .5em;
 }
+
+.col-sm-12{
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: black;
+    height: 90vh;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: purple;
+}

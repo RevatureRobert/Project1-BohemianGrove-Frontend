@@ -7,6 +7,7 @@ import { IPost } from "../Models/Post";
 import Feed from "../Components/Feed";
 import User from "../Components/User"
 import { IUser } from "../Models/User";
+import { Col, Row} from "reactstrap";
 
 export const Profile: React.FC = (props: any) => {
     const user = useSelector((store: IAppState) => store.user);
@@ -32,13 +33,16 @@ export const Profile: React.FC = (props: any) => {
     useEffect(refresh, [params.userName]);
 
     return (
-        <div className="container">
-            <div className="row">
-                {!user && <Redirect to="/login" />}
-                <User className="col-sm" user={thisUser} />
-                <Feed className="col-sm" posts={posts} />
-            </div>
+        <div>
+                <Col className="settingCol" sm="12" md={{ size: 6, offset: 3 }}>
+                    <div className="settingPostContainer">
+                        {!user && <Redirect to="/login" />}
+                        <User user={thisUser} />
+                        <Feed posts={posts} />
+                    </div>
+                </Col>
         </div>
+        
     );
 }
 
