@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
@@ -25,7 +25,7 @@ const CreatePost: React.FC = (props: any) => {
 
         console.log("Sending request...", {post});
         axios.post("http://localhost:3000/api/posts/", {post}).then(resp => {
-            setRedirect("/feed");
+            setRedirect("/reloadFeed");
         });
     }
 

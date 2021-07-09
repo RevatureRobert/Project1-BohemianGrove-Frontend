@@ -9,6 +9,6 @@ export const Splash: React.FC = (props: any) => {
             </div>
         </div>
     );
-} 
+}
 
 export default Splash;
