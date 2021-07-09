@@ -38,13 +38,15 @@ const Post: React.FC<IProps> = (props: IProps) => {
                 <CardBody>
                     <CardImg id="card-image" top width="10px" height="80px" src={props.post.displayImg} alt={props.post.displayImg} />
                     <CardTitle style={{ cursor: 'pointer' }} id="card-title" tag="h5" onClick={(e) => setRedirect("/" + props.post.userName)}>{props.post.displayName}</CardTitle>
-                    <CardSubtitle id="card-subtitle" tag="h6" className="mb-2 text-muted">@{props.post.userName}</CardSubtitle>
+                    <div className="handleAndButton">
+                    {(user?.userName === props.post.userName) && <Button className = "deleteButton" onClick={() => deletePost(user.userName, props.post.postTime || 0)}>X</Button>}
+                    <CardSubtitle id="card-subtitle" tag="h6" className="mb-2 text-muted">@{props.post.userName}</CardSubtitle> 
+                    </div>
                     </CardBody>
                     <CardText id="body">{props.post.postBody}</CardText>
                     {props.post.postImg && <CardImg src={props.post.postImg} alt={props.post.postImg} />}
                     <CardText id="timestamp">{new Date(props.post.postTime || 0).toLocaleString()}</CardText>
-                    {(user?.userName === props.post.userName) && <Button onClick={() => deletePost(user.userName, props.post.postTime || 0)}>Delete</Button>}
-               
+                    
             </Card>
         </div>
     );

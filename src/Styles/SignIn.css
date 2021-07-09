@@ -15,5 +15,10 @@
 }
 
 button#submit-button.btn.btn {
-  background-color: purple;
+  background-color:purple;
+}
+
+button#submit-button.btn.btn:hover,
+button#submit-button.btn.btn:focus{
+  background-color: plum;
 }
