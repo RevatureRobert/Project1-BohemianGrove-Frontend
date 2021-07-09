@@ -27,12 +27,12 @@ class SettingsComponent extends Component<any, any> {
     //Render form for updating profile information
     componentDidMount() {
         axios.get('http://localhost:3000/api/users/johncena').then(resp => {
-            console.log(resp);
+            //console.log(resp);
             this.setState({ currUser: resp.data.data });
         })
         axios.post('http://localhost:3000/api/users/authenticate', { userName: "johncena", password: "12345" })
             .then(resp => {
-                console.log(resp);
+                //console.log(resp);
                 this.setState({ loginToken: resp.data.loginToken });
             })
     }
