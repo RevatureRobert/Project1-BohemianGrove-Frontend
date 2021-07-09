@@ -1,0 +1,26 @@
+.formSetting{
+  background-color: #212529;
+  padding: 20px;
+  margin-top: 25px;
+}
+
+div.settingCol{
+  display: flex;
+  justify-content: center;
+}
+
+.settingPostContainer{
+  overflow-x: hidden;
+  overflow: scroll;
+  background-color: transparent;
+  height: 90vh;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: purple;
+}

@@ -1,26 +1,20 @@
 #CardContainer, #AddPostContainer{
-    /* border: 0px solid #d3d3d3; */
-    margin-bottom: 4px;
-    border-radius: .5em;
-    margin-bottom: 1em;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 25px;
     padding: 0em;
     text-align: left;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+    }
 
-  #card-image {
-      width: 80px;
+#card-image {
+    width: 80px;
     border-radius: 25px;
-      border: 1px solid #ddd;
-      padding: 1px; 
-      border: 4px;
-      margin-top: 2px;
-      margin-left: 2px;
-      float:left;
-      display: inline;
+    border: 1px solid #ddd;
+    padding: 1px; 
+    border: 4px;
+    margin-top: 2px;
+    margin-left: 2px;
+    float:left;
+    display: inline;
     }
 
     #card-title {
@@ -29,6 +23,11 @@
         position: absolute;
         margin-left: 25px;
         margin-top: 2px;
+    }
+
+    #card-title:hover,
+    #card-title:focus{
+        text-decoration: underline;
     }
 
     #card-subtitle {
@@ -82,12 +81,6 @@
         font-size: 18px;
         font-family: Montserrat;
         margin-bottom: 0px;
-    }
-
-    settingDiv{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
     }
     
     #CardContainer{
