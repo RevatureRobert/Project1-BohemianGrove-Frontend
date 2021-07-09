@@ -15,8 +15,10 @@ import App from './App';
 import { createMemoryHistory } from "history";
 import { reducer } from './Redux/Store'
 import { initialState } from './Redux/State';
-import { mount, shallow, render, configure} from 'enzyme';
+import { mount, shallow, configure} from 'enzyme';
 import  Adapter from 'enzyme-adapter-react-16';
+import { render } from '@testing-library/react';
+
 
 
 configure({ adapter: new Adapter() });
@@ -77,7 +79,7 @@ describe('App', ()=>{
   });
 })
 
-describe('get')
+
   it("should render title", () => {
     const wrapper = render(
       <MemoryRouter>
@@ -97,14 +99,14 @@ describe('get')
   });
 
 
-  it("should render title", () => {
-    const wrapper = render(
-      <MemoryRouter>
-        <Feed/>
-     </MemoryRouter>
-    );
-    expect(wrapper.queryAllByText("new-card-title")).toHaveLength(1);
-  });
+  // it("should render title", () => {
+  //   const wrapper = render(
+  //     <MemoryRouter>
+  //       <Feed/>
+  //    </MemoryRouter>
+  //   );
+  //   expect(wrapper.queryAllByText("new-card-title")).toHaveLength(1);
+  // });
 
 
 
@@ -151,18 +153,18 @@ test('should return the initial state', () => {
   )
 })
 
-describe('SignInComponent', () => {
-  it("should update the route on click of the button",() => {
-    const history = createMemoryHistory();
-    const wrapper = render(
-      <Router history="{history}">
-        <SignInComponent/>
-     </Router>
-    );
-    wrapper.getByText("submit-button").click();
-    expect(history.location.pathname).toBe("/feed");
-  });
-});
+// describe('SignInComponent', () => {
+//   it("should update the route on click of the button",() => {
+//     const history = createMemoryHistory();
+//     const wrapper = render(
+//       <Router history="{history}">
+//         <SignInComponent/>
+//      </Router>
+//     );
+//     wrapper.getByText("submit-button").click();
+//     expect(history.location.pathname).toBe("/feed");
+//   });
+// });
 
 
 describe('manage profile page test suite', () => {
