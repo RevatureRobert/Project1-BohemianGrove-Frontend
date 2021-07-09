@@ -43,14 +43,7 @@ const Settings: React.FC = (props: any) => {
                 <FormGroup>
                     <Label id="update-form-top-label" for="exampleEmail">Update Settings</Label>
                 </FormGroup>
-
-                {/* <FormGroup>
-                    <Label for="username">Username:</Label>
-                    <br />
-                    <FormText className="usernameSetting">{user?.userName}</FormText>
-
-                </FormGroup> */}
-
+        <br />
                 <FormGroup>
                     <Label for="displayName">Handle</Label>
                     <Input
@@ -60,7 +53,7 @@ const Settings: React.FC = (props: any) => {
                         onChange={(e) => setUserInfo({...userInfo, displayName: e.target.value})}
                     />
                 </FormGroup>
-
+        <br />
                 <FormGroup>
                     <Label for="examplePassword">Profile Image</Label>
                     <Input
@@ -70,7 +63,7 @@ const Settings: React.FC = (props: any) => {
                         onChange={(e) => setUserInfo({...userInfo, profileImg: e.target.value})}
                     />
                 </FormGroup>
-
+        <br />
                 <FormGroup>
                     <Label for="exampleEmail">Email</Label>
                     <Input
