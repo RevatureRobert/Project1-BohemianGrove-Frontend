@@ -8,7 +8,7 @@ import Feed from "../Components/Feed";
 import SettingsComp from "../Components/Settings"
 import { IPost } from "../Models/Post";
 import '../Styles/Settings.css';
-import { Container, Col, Row } from "reactstrap";
+import { Col, Row } from "reactstrap";
 export const Settings: React.FC = (props: any) => {
     const user = useSelector((store: IAppState) => store.user);
     

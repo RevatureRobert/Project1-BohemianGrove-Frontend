@@ -14,11 +14,15 @@
   justify-content: space-between;
 }
 
-button#submit-button.btn.btn {
+button#submit-button.btn.btn,
+button#post-button.btn.btn
+{
   background-color:purple;
+  border: none;
 }
 
 button#submit-button.btn.btn:hover,
 button#submit-button.btn.btn:focus{
   background-color: plum;
+  border: none;
 }
