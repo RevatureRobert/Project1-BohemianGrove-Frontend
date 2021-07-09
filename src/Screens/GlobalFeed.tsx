@@ -24,7 +24,7 @@ export const GlobalFeed: React.FC = (props: any) => {
     useEffect(refresh, []);
 
     return (
-        <div>
+        <div className="globalFeedContainer">
             {!user && <Redirect to="/login" />}
             <CreatePost/>
             <Feed posts={posts} />

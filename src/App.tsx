@@ -11,6 +11,7 @@ import Search from './Screens/Search';
 import Settings from './Screens/Settings';
 import SignUp from './Screens/SignUp';
 import Splash from './Screens/Splash';
+import ReloadFeed from './Screens/ReloadFeed';
 
 
 
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <Splash />
+          </Route>
+          <Route exact path="/reloadFeed">
+            <ReloadFeed />
           </Route>
           <Route exact path="/:userName">
             <Profile />

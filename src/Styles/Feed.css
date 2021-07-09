@@ -4,7 +4,7 @@
   justify-content: space-evenly;
   overflow: scroll;
   overflow-x: hidden;
-  background-color: black;
+  background-color: transparent;
   width: 21vw;
   height: 90vh;
   border: 0px solid #d3d3d3;

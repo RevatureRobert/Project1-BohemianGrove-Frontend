@@ -42,8 +42,8 @@ const NavigationBar: React.FC = (props: any) => {
                     Bohemian Grove
                 </NavbarBrand>
                 {user && 
-                    <Form onSubmit={(e) => onSubmit(e)}>
-                        <Input type="search" placeholder="Search for a user" onChange={(e) => setSearch(e.target.value)}/>
+                    <Form className="searchBar-container" onSubmit={(e) => onSubmit(e)}>
+                        <Input className="searchBar"type="search" placeholder="Search for a user" onChange={(e) => setSearch(e.target.value)}/>
                     </Form>
                 }
                 <NavbarToggler onClick={toggle} />

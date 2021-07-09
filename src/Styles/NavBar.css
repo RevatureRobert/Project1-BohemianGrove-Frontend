@@ -34,4 +34,10 @@ a.dropdown-item:hover{
     margin-right: 6px;
 }
 
+.searchBar-container{
+    position: absolute;
+    margin-left: 45vw;
+    width: 10vw;
+}
+
 
