@@ -125,6 +125,6 @@ class Feed extends Component<any, any> {
     }
 }
 
-export default connect(
-    null, {}
-) (Feed);
+export default Feed
+
+//export default connect(null, {}) (Feed);

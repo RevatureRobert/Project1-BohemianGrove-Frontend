@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardContainer renders without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`Feed renders without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`NavigationBar renders without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`ProfileComponent renders without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`SettingsComponent renders without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`SignInUpComponent renders without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`SignUpComponent renders without crashing 1`] = `ShallowWrapper {}`;

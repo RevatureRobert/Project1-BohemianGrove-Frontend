@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import ReactDOM from 'react-dom';
 import { MemoryRouter } from 'react-router-dom';
 import SignInComponent from './Components/SignIn';
@@ -10,19 +10,68 @@ import ProfileComponent from './Components/Profile';
 import CardContainer from './Components/Card';
 import Feed from './Components/Feed';
 import Router from 'react-router';
+import Switch from 'react-router'
 import App from './App';
-import shallow from 'enzyme-adapter-react-16';
+
 import { createMemoryHistory } from "history";
 import { reducer } from './Redux/Store'
 import { initialState } from './Redux/State';
-import { mount } from 'enzyme';
+import { mount, shallow, render, configure} from 'enzyme';
+import  Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
+
+describe('SignUpComponent', ()=>{
+  it('renders without crashing', () => {
+  const component = shallow(<MemoryRouter><SignUpComponent/></MemoryRouter>);
+  expect(component).toMatchSnapshot();  
+  });
+})
+
+describe('SignInUpComponent', ()=>{
+  it('renders without crashing', () => {
+  const component = shallow(<MemoryRouter><SignInComponent/></MemoryRouter>);
+  expect(component).toMatchSnapshot();  
+  });
+})
+
+describe('SettingsComponent', ()=>{
+  it('renders without crashing', () => {
+  const component = shallow(<SettingsComponent/>);
+  expect(component).toMatchSnapshot();  
+  });
+})
+
+describe('ProfileComponent', ()=>{
+  it('renders without crashing', () => {
+  const component = shallow(<ProfileComponent/>);
+  expect(component).toMatchSnapshot();  
+  });
+})
+
+describe('NavigationBar', ()=>{
+  it('renders without crashing', () => {
+  const component = shallow(<NavigationBar/>);
+  expect(component).toMatchSnapshot();  
+  });
+})
+
+describe('Feed', ()=>{
+  it('renders without crashing', () => {
+  const component = shallow(<Feed/>);
+  expect(component).toMatchSnapshot();  
+  });
+})
+
+describe('CardContainer', ()=>{
+  it('renders without crashing', () => {
+  const component = shallow(<CardContainer/>);
+  expect(component).toMatchSnapshot();  
+  });
+})
 
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<MemoryRouter><SignUpComponent /></MemoryRouter>, div);
-});
-
+/*
   it("should render title", () => {
     const wrapper = render(
       <MemoryRouter>
@@ -32,7 +81,7 @@ it('renders without crashing', () => {
     expect(wrapper.queryAllByText("Bohemian Grove")).toHaveLength(1);
   });
 
-it('renders without crashing', () => {
+it('sign in renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<MemoryRouter><SignInComponent /></MemoryRouter>, div);
 });
@@ -52,6 +101,7 @@ it('renders without crashing', () => {
   ReactDOM.render(<MemoryRouter><Feed /></MemoryRouter>, div);
 });
 
+/*
   it("should render title", () => {
     const wrapper = render(
       <MemoryRouter>
@@ -60,6 +110,7 @@ it('renders without crashing', () => {
     );
     expect(wrapper.queryAllByText("new-card-title")).toHaveLength(1);
   });
+
 
 
 it('has a languageName of "TypeScript"', () => {
@@ -74,6 +125,8 @@ it('has a languageName of "TypeScript"', () => {
   };
   expect(state.loginToken).toEqual('TypeScript');
 });
+
+
 it('has a userName', () => {
   const state: typeof initialState = { 
     loginToken: 'TypeScript',
@@ -89,12 +142,18 @@ it('has a userName', () => {
 
 
 test('should return the initial state', () => {
-  expect(reducer(undefined, {})).toEqual([
+  expect(reducer(undefined, {})).toEqual(
     {
-      username: ' ',
-      password: ' '
+      loginToken: " ",
+      user:{
+        displayName: ' ',
+        email: ' ',
+        password: ' ',
+        profileImg:'png',
+        userName:' '
+        }
     }
-  ])
+  )
 })
 
 describe('SignInComponent', () => {
@@ -110,29 +169,22 @@ describe('SignInComponent', () => {
   });
 });
 
-it('renders without crashing', () => {
+
+
+
+it('app renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Router> 
-                    <SignInComponent />
-                  </Router>, div);
+  ReactDOM.render(<MemoryRouter><App /></MemoryRouter>, div);
 });
 
-
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-});
-
-it('renders without crashing', () => {
+it('nav bar renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<NavigationBar />, div);
 });
 
+
 describe('manage profile page test suite', () => {
-
-
   it('snapshot test', () => {
-
       const setRouteLeaveHook =jest.fn();
 
       let wrapper = shallow(
@@ -141,8 +193,8 @@ describe('manage profile page test suite', () => {
       );
     expect(wrapper).toMatchSnapshot();
   })
- }) 
-
+ })
+ 
  it("should render title", () => {
   const wrapper = render(
     <MemoryRouter>
@@ -153,7 +205,7 @@ describe('manage profile page test suite', () => {
   expect(wrapper.queryAllByText("What's on your mind?")).toHaveLength(1);
 });
 
- it('renders without crashing', () => {
+ it('feed renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
   <MemoryRouter>
@@ -162,23 +214,27 @@ describe('manage profile page test suite', () => {
   , div);
 });
 
-it('renders without crashing', () => {
+
+it('sign up renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<SignUpComponent />, div);
+  ReactDOM.render(<MemoryRouter><SignUpComponent /></MemoryRouter>, div);
 });
 
-it('renders without crashing', () => {
+
+it('settings renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<SettingsComponent />, div);
 });
 
-it('renders without crashing', () => {
+it('profile renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<ProfileComponent />, div);
 });
 
-it('renders without crashing', () => {
+
+it('card renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<CardContainer />, div);
 });
+*/
 
