@@ -1,18 +1,11 @@
+import { IUser } from "../Models/User";
 
-export enum Actionables {
-    INITIAL_LOGIN = 'Initial login',
-    NEW_SIGNUP = 'New user signup',
-    FETCH_TOKEN = 'Fetch token'
+export enum UserAction {
+    LOGIN = 'Login',
+    LOGOUT = 'logout'
 }
 
-export interface IActionables {
-    type : Actionables
-}
-
-export interface AppActions extends IActionables {
-    type: Actionables,
-    payload: {
-        username: string,
-        password: string
-    }
+export interface IUserActions {
+    type: UserAction,
+    payload: {user?: IUser}
 }
