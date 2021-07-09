@@ -47,8 +47,8 @@ class Feed extends Component<any, any> {
         let posts: string[] = [];
         //this.setState({ postsList : initialState.user});
         const res =  await axios.get('http://localhost:3000/api/posts').then(res => {
-            console.log(res.data);
-            res.data.forEach(post => posts.push(post)); 
+            const reversedData = res.data.reverse();
+            reversedData.forEach(post => posts.push(post)); 
             this.setState({ postsList : posts });
         });
 
