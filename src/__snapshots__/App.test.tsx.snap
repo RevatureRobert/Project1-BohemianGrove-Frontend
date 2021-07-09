@@ -4,11 +4,7 @@ exports[`App renders without crashing 1`] = `ShallowWrapper {}`;
 
 exports[`CreatePostComponent renders without crashing 1`] = `ShallowWrapper {}`;
 
-exports[`Feed renders without crashing 1`] = `ShallowWrapper {}`;
-
 exports[`GlobalFeedComponent renders without crashing 1`] = `ShallowWrapper {}`;
-
-exports[`NavigationBar renders without crashing 1`] = `ShallowWrapper {}`;
 
 exports[`PostComponent renders without crashing 1`] = `ShallowWrapper {}`;
 
