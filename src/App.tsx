@@ -7,6 +7,8 @@ import SettingsComponent from './Components/Profile';
 import Feed from './Components/Feed';
 import { Switch, Route, } from 'react-router-dom';
 import { Component } from 'react';
+import SignUpContainer from './Components/SignInContainer';
+import FeedContainer from './Components/FeedContainer';
 
 class App extends Component<any, any> {
   render() {
@@ -20,14 +22,13 @@ class App extends Component<any, any> {
             <Route exact path="/">
               <SplashComponent />
             </Route>
-            <Route exact path="/signin">
-              <SignInComponent />
+            <Route exact path="/signin" 
+            component={SignUpContainer}>
             </Route>
             <Route exact path="/signup">
               <SignUpComponent />
             </Route>
-            <Route exact path="/feed">
-              <Feed />
+            <Route exact path="/feed" component={FeedContainer}>
             </Route>
             <Route exact path="/profile">
               <SettingsComponent />

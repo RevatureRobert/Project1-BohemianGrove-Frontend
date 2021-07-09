@@ -48,11 +48,10 @@ class Feed extends Component<any, any> {
         //this.setState({ postsList : initialState.user});
         const res =  await axios.get('http://localhost:3000/api/posts').then(res => {
             console.log(res.data);
-            res.data.forEach(post => posts.push(post)); 
+            const reversedData = res.data.reverse();
+            reversedData.forEach(post => posts.push(post)); 
             this.setState({ postsList : posts });
         });
-
-        
     }
 
 
@@ -61,17 +60,17 @@ class Feed extends Component<any, any> {
     }
 
     renderItems()  {
-        return this.state.postsList.map((card) => (
+        return this.state.postsList.map((card, idx) => (
             <div id="CardContainer">
-            <Card >              
-              <CardBody>
+            <Card>              
+              <CardBody >
               <CardImg id ="card-image" top width="10px" height = "80px"  src={thumbnail} alt={thumbnail} />
                 <CardTitle id="card-title" tag="h5">{card.displayName}</CardTitle>
                 <CardSubtitle id="card-subtitle" tag="h6" className="mb-2 text-muted">@{card.userName}</CardSubtitle>
                 
                 
               </CardBody>
-              <CardText id="body">{card.postBody}</CardText>
+              <CardText key={`card+${idx}`} id="body">{card.postBody}</CardText>
               <CardText id="timestamp">{ this.createNewDate(card.postTime)}</CardText>
             </Card>
           </div>
@@ -100,8 +99,11 @@ class Feed extends Component<any, any> {
         }
 
     render() {
+        const formData = { userName: 'god', password:"123"}
         return(
             <div className="globalFeedContainer" key={this.state.index}>
+                <button onClick={()=> console.log(this.props.user)}>hello</button>
+               
                 <Card id="CardContainer">
                     <CardBody>
                         <CardTitle id="new-card-title" tag="h5">Add new: </CardTitle>
@@ -120,7 +122,7 @@ class Feed extends Component<any, any> {
                 <ListGroup>
                     {this.renderItems()}
                 </ListGroup>
-    
+     <button onClick={()=> this.props.authenticate(formData)}>hello</button>
     
             </div>
         )

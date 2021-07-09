@@ -1,11 +1,5 @@
 import React from 'react';
 import '../Styles/Splash.css';
-import {
-    Button,
-    FormGroup,
-    Form,
-    Badge
-  } from 'reactstrap';
 import {withRouter} from 'react-router'
 
 
