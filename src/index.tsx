@@ -1,29 +1,20 @@
-import React, { Component } from 'react';
+import React, from 'react';
 import ReactDOM from 'react-dom';
 import './Styles/index.css';
 import App from './App';
-import NavigationBar from './Components/NavBar';
-import SignInComponent from './Components/SignIn';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import createStore from redux;
+// const store = createStore(rootReducer);
 
-
-
-ReactDOM.render((
-  
-  // <React.StrictMode>
-  //   <NavigationBar />
-  //   <SignInComponent />
-  // </React.StrictMode>,
-  // document.getElementById('root'),
-  
-  
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-
-  
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 ), document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,18 +1,24 @@
 
-export enum Actionables {
-    INITIAL_LOGIN = 'Initial login',
-    NEW_SIGNUP = 'New user signup',
-    FETCH_TOKEN = 'Fetch token'
+export enum LogActions {
+    LOGIN = 'Log In',
+    LOGOUT = 'Log Out',
 }
 
-export interface IActionables {
-    type : Actionables
-}
-
-export interface AppActions extends IActionables {
-    type: Actionables,
+export interface ILogActions{
+    type: LogActions,
     payload: {
         username: string,
         password: string
     }
 }
+// export interface IActionables {
+//     type : Actionables
+// }
+
+// export interface AppActions extends IActionables {
+//     type: Actionables,
+//     payload: {
+//         username: string,
+//         password: string
+//     }
+// }

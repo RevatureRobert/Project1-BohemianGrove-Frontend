@@ -67,7 +67,6 @@ class SignInComponent extends Component<any, any> {
 
     const auth = { userName : "johncena", password: "12345"}
     axios.post('http://localhost:3000/api/users/authenticate', auth).then(resp => console.log(resp)).then(this.props.history.push('/feed'));
-    console.log(`Username: ${this.state.username}, Password: ${this.state.password}`);
   }
   render() {
     const { email, password } = this.state;
