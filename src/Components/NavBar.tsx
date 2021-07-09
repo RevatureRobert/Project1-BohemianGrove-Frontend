@@ -38,6 +38,7 @@ const NavigationBar: React.FC = (props: any) => {
         <div>
             <Navbar color="dark" dark expand="md">
                 <NavbarBrand id="logo-text" tag={Link} to={user ? "/feed" : "/"}>
+                    <img src="/illuminati.ico" className="navLogo"/>
                     Bohemian Grove
                 </NavbarBrand>
                 {user && 
