@@ -24,7 +24,7 @@ export const Settings: React.FC = (props: any) => {
     useEffect(refresh, [user]);
 
     return (
-        <div>
+        <div className="settingDiv">
             {!user && <Redirect to="/login"/>}
             <User user={user}/>
             <Feed posts={posts}/>
