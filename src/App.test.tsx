@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import SignInComponent from './Components/SignIn';
 import SignUpComponent from './Components/SignUp';
 import NavigationBar from './Components/NavBar';
-import SettingsComponent from './Components/Settings';
+import SettingsComponent from './Components/Profile';
 import ProfileComponent from './Components/Profile';
 import CardContainer from './Components/Card';
 import Feed from './Components/Feed';

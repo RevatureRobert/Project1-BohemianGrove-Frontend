@@ -1,32 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
 import './Styles/App.css';
 import SignInComponent from './Components/SignIn';
 import SignUpComponent from './Components/SignUp';
 import NavigationBar from './Components/NavBar';
 import SplashComponent from './Components/Splash';
-import CardContainer from './Components/Card';
-import SettingsComponent from './Components/Settings';
-import ProfileComponent from './Components/Profile';
+import SettingsComponent from './Components/Profile';
 import Feed from './Components/Feed';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, } from 'react-router-dom';
 import { Component } from 'react';
-import {
-  Button,
-  Form,
-  FormGroup,
-  Input,
-  Label,
-  FormFeedback,
-  Badge
-} from 'reactstrap';
 
 class App extends Component<any, any> {
   render() {
     return (
       
       <div className="appContainer">
-       <NavigationBar />
+      
+      <NavigationBar />
 
           <Switch>
             <Route exact path="/">
@@ -41,11 +29,8 @@ class App extends Component<any, any> {
             <Route exact path="/feed">
               <Feed />
             </Route>
-            <Route exact path="/settings">
-              <SettingsComponent />
-            </Route>
             <Route exact path="/profile">
-              <ProfileComponent />
+              <SettingsComponent />
             </Route>
           </Switch>
 

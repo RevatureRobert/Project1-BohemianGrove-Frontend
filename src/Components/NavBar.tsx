@@ -51,9 +51,6 @@ const NavigationBar = (props: any) => {
                   <DropdownItem href="/feed">
                     Feed
                   </DropdownItem>
-                  <DropdownItem href="/settings">
-                    Settings
-                  </DropdownItem>
                   <DropdownItem href="/logout">
                       Logout
                   </DropdownItem>
