@@ -11,7 +11,7 @@ import CardContainer from './Components/Card';
 import Feed from './Components/Feed';
 import Router from 'react-router';
 import App from './App';
-import shallow from 'enzyme-adapter-react-16';
+import shallow from '@wojtekmaj/enzyme-adapter-react-17';
 import { createMemoryHistory } from "history";
 import { reducer } from './Redux/Store'
 import { initialState } from './Redux/State';
