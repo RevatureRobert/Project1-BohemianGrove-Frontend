@@ -14,21 +14,13 @@ class ProfileComponent extends Component<any,any> {
         super(props);
         this.state = {
           postsList:[],
-          
         };
       }
-
     componentDidMount() {
-        //TODO
-        //Pull user specific posts from endpoint upon initialization of component
-        //Also pull user profile
-        
 
     }
 
     renderProfile() {
-        //TODO
-        //Pull user profile from endpoint and populate card --> Return card
         return ( <div></div>);
     }
 
@@ -54,12 +46,10 @@ class ProfileComponent extends Component<any,any> {
 
     render() {
         return (
-            <div className="globalFeedContainer">
+            <div>
 
             <Row>
                 <Col>
-                //TODO
-                //User Profile Card
                 <Container>
                     {this.renderProfile()}
                 </Container>

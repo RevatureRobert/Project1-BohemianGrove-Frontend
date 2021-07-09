@@ -25,7 +25,7 @@ class App extends Component<any, any> {
   render() {
     return (
       
-      <div>
+      <div className="appContainer">
        <NavigationBar />
 
           <Switch>

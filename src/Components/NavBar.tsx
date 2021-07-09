@@ -34,11 +34,10 @@ const NavigationBar = (props: any) => {
             </Nav>
           </Collapse>
           <Nav className="ml-auto" navbar>
-                {/* <NavLink id="redirect-to-account-nav" href="/signin">Account</NavLink> */}
             <NavItem>
                 <NavLink href="/signup">Sign Up</NavLink>
               </NavItem>
-               <NavItem>
+              <NavItem>
                 <NavLink href="/signin">Sign In</NavLink>
               </NavItem>
               <UncontrolledDropdown  nav inNavbar>
@@ -46,11 +45,14 @@ const NavigationBar = (props: any) => {
                   Options
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem href="/settings">
-                    Settings
+                  <DropdownItem href="/profile">
+                    Profile
                   </DropdownItem>
                   <DropdownItem href="/feed">
                     Feed
+                  </DropdownItem>
+                  <DropdownItem href="/settings">
+                    Settings
                   </DropdownItem>
                   <DropdownItem href="/logout">
                       Logout

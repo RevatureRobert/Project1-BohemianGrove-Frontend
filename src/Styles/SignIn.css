@@ -1,7 +1,7 @@
 #sign-in-div {
   opacity: 1.0;
   background-color:#212529;
-  /* Fully opaque */
+  border: 6px solid purple;
 }
 
 #redirect-new-user {
@@ -12,4 +12,8 @@
 .signInButtonsContainer{
   display: flex;
   justify-content: space-between;
+}
+
+button#submit-button.btn.btn {
+  background-color: purple;
 }

@@ -70,10 +70,6 @@ label {
   }
 }
 
-.root{
-  z-index: 10;
-}
-
 * {
   color: antiquewhite;
   font-family: "Bad Script"
@@ -88,3 +84,12 @@ a:link{
 a{
   color: antiquewhite;
 }
+
+.appContainer{
+  overflow: hidden;
+}
+
+body{
+  overflow: hidden;
+}
+

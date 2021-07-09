@@ -19,10 +19,12 @@ a.dropdown-item{
     color: antiquewhite;
 }
 
+a.dropdown-item:hover{
+    background-color: purple;
+}
+
 .ml-auto{
     margin-right: 60px;
 }
-
-
 
 

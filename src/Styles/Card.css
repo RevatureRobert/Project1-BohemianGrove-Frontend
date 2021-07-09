@@ -1,13 +1,13 @@
 #CardContainer, #AddPostContainer{
-    border: 0px solid #d3d3d3;
+    /* border: 0px solid #d3d3d3; */
+    margin-bottom: 4px;
     border-radius: .5em;
     margin-bottom: 1em;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 8px;
+    margin-top: 25px;
     padding: 0em;
     text-align: left;
-    width: 490px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
@@ -58,19 +58,31 @@
     }
 
     #post-button {
-        background-color:darkorchid;
+        background-color:purple;
         margin-top: 6px;
         margin-bottom: 2px;
     }
 
-    .card-body{
-        background-color: #212529;
-    }
-
-    div.card{
+    .card-body,
+    .card,
+    div.card,
+    div#AddPostContainer.card{
+        min-width: 300px;
+        width:20vw;
+        height:15vh;
         background-color: #212529;
     }
 
     p#timestamp.card-text{
-        font-size: 18px;
+        font-size: 12px;
+        font-family: Montserrat;
+        margin-bottom: 100px;
     }
+
+    p#body.card-text{
+        font-size: 18px;
+        font-family: Montserrat;
+        margin-bottom: 0px;
+    }
+
+    

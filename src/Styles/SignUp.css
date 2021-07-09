@@ -1,5 +1,5 @@
 .SignUpComponent {
-    border: 2px solid #d3d3d3;
+    border: 6px solid purple;
     opacity: 1.0;
     background-color: 'white';
     border-radius: .5em;
@@ -53,4 +53,4 @@
   .SignUpComponent-link {
     color: #61dafb;
   }
-  
+

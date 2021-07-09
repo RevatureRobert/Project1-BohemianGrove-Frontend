@@ -28,16 +28,18 @@ class Feed extends Component<any, any> {
 
       
 
-    async componentDidUpdate() {
-        let posts: string[] = [];
-        //this.setState({ postsList : initialState.user});
-        const res =  await axios.get('http://localhost:3000/api/posts').then(res => {
-            console.log(res.data);
-            res.data.forEach(post => posts.push(post)); 
-            posts.reverse();
-            this.setState({ postsList : posts });
-        });
-      }
+    // async componentDidUpdate() {
+    //     let posts: string[] = [];
+    //     let x = 1;
+    //     //this.setState({ postsList : initialState.user});
+    //     const res =  await axios.get('http://localhost:3000/api/posts').then(res => {
+    //         console.log(res.data);
+    //         console.log(++x);
+    //         res.data.forEach(post => posts.push(post)); 
+    //         posts.reverse();
+    //         this.setState({ postsList : posts });
+    //     });
+    //   }
 
     async componentDidMount() {
         //TODO
@@ -100,7 +102,7 @@ class Feed extends Component<any, any> {
     render() {
         return(
             <div className="globalFeedContainer" key={this.state.index}>
-                <Card id="AddPostContainer">
+                <Card id="CardContainer">
                     <CardBody>
                         <CardTitle id="new-card-title" tag="h5">Add new: </CardTitle>
                         <FormGroup>
@@ -125,6 +127,8 @@ class Feed extends Component<any, any> {
     }
 }
 
-export default connect(
-    null, {}
-) (Feed);
+export default Feed;
+
+// connect(
+//     null, {}
+// ) (Feed);
