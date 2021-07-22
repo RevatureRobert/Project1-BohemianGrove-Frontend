@@ -17,6 +17,9 @@ import { User } from '../Models/User';
 import { UserAction } from '../Redux/Actions';
 import { Redirect } from 'react-router-dom';
 
+import cogClient from '../Cognito';
+import { InitiateAuthCommand, InitiateAuthCommandInput} from '@aws-sdk/client-cognito-identity-provider';
+
 export const Login: React.FC = (props: any) => {
     const user = useSelector((state: IAppState) => state.user);
     const dispatch = useDispatch();
@@ -26,17 +29,24 @@ export const Login: React.FC = (props: any) => {
         password: ''
     });
 
-    function submitForm(event: FormEvent) {
+    async function submitForm(event: FormEvent) {
         event.preventDefault();
-        console.log("Sending request...", { userName: userInfo.userName, password: userInfo.password });
-        axios.post('http://localhost:3000/api/users/authenticate', { userName: userInfo.userName, password: userInfo.password }).then(resp => {
-            console.log("Response received", resp);
-            const userToInsert = new User(resp.data.data);
-            dispatch({
-                type: UserAction.LOGIN,
-                payload: {user: userToInsert}
-            });
-        });
+        const params: InitiateAuthCommandInput = {
+            AuthFlow: "USER_PASSWORD_AUTH",
+            AuthParameters: {
+                USERNAME: userInfo.userName,
+                PASSWORD: userInfo.password,
+                SCOPE: "email"
+            },
+            ClientId: "tcl937mh5q8gihnalgvcmnn1r"
+        }
+
+        const resp1 = await cogClient.send(new InitiateAuthCommand(params));
+        console.log(resp1);
+        console.log('step 1');
+        const resp2 = await axios.get('https://90yylhrbbh.execute-api.us-east-2.amazonaws.com/Prod/user/bob', {headers: {Authorization: resp1.AuthenticationResult?.AccessToken}})
+        console.log(resp2);
+        console.log('this is working');
     }
 
     return (

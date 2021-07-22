@@ -17,6 +17,9 @@ import { IAppState } from '../Redux/Store';
 import { Redirect } from 'react-router-dom';
 import { UserAction } from '../Redux/Actions';
 
+import { SignUpCommand, SignUpCommandInput } from '@aws-sdk/client-cognito-identity-provider';
+import cogClient from '../Cognito';
+
 export const SignUp: React.FC = (props: any) => {
     const user = useSelector((state: IAppState) => state.user);
     const dispatch = useDispatch();
@@ -40,18 +43,21 @@ export const SignUp: React.FC = (props: any) => {
 
     function submitForm(event: FormEvent) {
         event.preventDefault();
-        const userToCreate = new User(userInfo);
-        console.log("Sending request...", {user: userToCreate});
-        axios.post('http://localhost:3000/api/users', { user: userToCreate }).then(resp => {
-            console.log("Response received", resp);
-            const userToInsert = new User(resp.data.data);
-            dispatch({
-                type: UserAction.LOGIN,
-                payload: {user: userToInsert}
-            });
+        const params: SignUpCommandInput = {
+            ClientId: "tcl937mh5q8gihnalgvcmnn1r",
+            Username: userInfo.userName,
+            Password: userInfo.password,
+            UserAttributes: [
+                {
+                    Name: "email",
+                    Value: userInfo.email
+                }
+            ]
+        }
+        cogClient.send(new SignUpCommand(params)).then(resp => {
+            console.log(resp);
         });
     }
-
 
     return (
         <div id="sign-up-form" className="SignUpComponent">
