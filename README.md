@@ -1,12 +1,13 @@
 #  Bohemian Grove
-
+   
+   [View Our Backend Repository](https://github.com/RevatureRobert/Project1-TurkeyBowl)
 
 ## About
 Bohemian Grove is the message board for those in the know! It is a message board to share any conspiracy theories while your identity is safely secured.
 
 ## Technologies 
   * Frontend: React, Redux, Hooks
-  * Backend: NodeJs, Express, DynamoDB
+  * Backend: NodeJs, Express, DynamoDB 
   * Styling: CSS,HTML5, ReactStraps, Google Fonts, and Canvas
  
     
@@ -18,9 +19,17 @@ Bohemian Grove is the message board for those in the know! It is a message board
    
   ## Search Bar
   
-  The search bar allows users to search for user handles. The user's input queries the database and returns the closest      
-  matches.
+  The search bar allows users to search for user handles. The user's input queries the database and returns the closest matches.
   
+  ## CRUD
+  
+  We allow users to create, delete, and update their accounts and their post accordingly
+  
+  
+## Future Goals!
+  
+  We plan to implement follow, likes and comment functionality in the near future and even making our application mobile friendly!
+
 ## DEMO
 
   ![](splash.gif)
