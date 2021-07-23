@@ -1,6 +1,6 @@
 #  Bohemian Grove
    
-   [View Our Backend Repository](https://github.com/RevatureRobert/Project1-TurkeyBowl)
+   [View Our Backend Repository](https://github.com/RevatureRobert/Project1-BohemianGrove-Backend)
 
 ## About
 Bohemian Grove is the message board for those in the know! It is a message board to share any conspiracy theories while your identity is safely secured.
