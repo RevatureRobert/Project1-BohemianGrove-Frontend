@@ -1,4 +1,4 @@
-import { IUser } from "../Models/User";
+import { IUser } from "../models/User";
 
 export enum UserAction {
     LOGIN = 'Login',

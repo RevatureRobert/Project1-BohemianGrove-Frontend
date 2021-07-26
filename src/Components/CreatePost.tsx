@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { Card, CardBody, CardTitle, FormGroup, Label, Input, Button } from "reactstrap";
-import { IPost } from "../Models/Post";
+import { IPost } from "../models/Post";
 import { IAppState } from "../Redux/Store";
 
 

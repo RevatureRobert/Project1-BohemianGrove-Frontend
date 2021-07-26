@@ -6,7 +6,7 @@ import User from "../Components/User";
 import axios from "axios";
 import Feed from "../Components/Feed";
 import SettingsComp from "../Components/Settings"
-import { IPost } from "../Models/Post";
+import { IPost } from "../models/Post";
 import '../Styles/Settings.css';
 import { Col, Row } from "reactstrap";
 export const Settings: React.FC = (props: any) => {

@@ -9,7 +9,7 @@ import {
     Label, Row, Col
 } from 'reactstrap';
 
-import { User } from '../Models/User'
+import { User } from '../models/User'
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';

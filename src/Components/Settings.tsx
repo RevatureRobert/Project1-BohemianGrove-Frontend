@@ -2,7 +2,7 @@ import axios from "axios";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, FormGroup, Label, FormText, Input, Button, Container, Row, Col } from "reactstrap";
-import { User } from "../Models/User";
+import { User } from "../models/User";
 import { UserAction } from "../Redux/Actions";
 import { IAppState } from "../Redux/Store";
 
