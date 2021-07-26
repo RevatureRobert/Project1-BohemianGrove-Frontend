@@ -36,9 +36,9 @@ export const Login: React.FC = (props: any) => {
             AuthParameters: {
                 USERNAME: userInfo.userName,
                 PASSWORD: userInfo.password,
-                SCOPE: "email"
+                SCOPE: "openid"
             },
-            ClientId: "tcl937mh5q8gihnalgvcmnn1r"
+            ClientId: "gptc74a8d8t29m3a4pos69c2a"
         }
 
         const resp1 = await cogClient.send(new InitiateAuthCommand(params));

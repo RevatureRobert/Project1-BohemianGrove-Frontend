@@ -44,7 +44,7 @@ export const SignUp: React.FC = (props: any) => {
     function submitForm(event: FormEvent) {
         event.preventDefault();
         const params: SignUpCommandInput = {
-            ClientId: "tcl937mh5q8gihnalgvcmnn1r",
+            ClientId: "gptc74a8d8t29m3a4pos69c2a",
             Username: userInfo.userName,
             Password: userInfo.password,
             UserAttributes: [
