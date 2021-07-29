@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 import axios from "axios";
 import Feed from '../Components/Feed';
 import CreatePost from '../Components/CreatePost';
-import { IPost } from "../models/Post";
+import { IPost } from "../Models/Post";
 
 export const GlobalFeed: React.FC = (props: any) => {
     const user = useSelector((store: IAppState) => store.user);

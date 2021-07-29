@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { IAppState } from "../Redux/Store";
 import { Redirect, useParams } from "react-router-dom";
-import { IUser } from "../models/User";
+import { IUser } from "../Models/User";
 import axios from "axios";
 import UserList from "../Components/UserList";
 

@@ -1,4 +1,4 @@
-import { IUser } from "../models/User";
+import { IUser } from "../Models/User";
 
 export interface IAppState {
     user?: IUser;

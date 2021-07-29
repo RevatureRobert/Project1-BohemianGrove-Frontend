@@ -1,6 +1,6 @@
 import React from "react";
 import { ListGroup } from "reactstrap";
-import { IUser } from "../models/User";
+import { IUser } from "../Models/User";
 import User from "./User";
 
 interface IProps {

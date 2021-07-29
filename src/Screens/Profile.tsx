@@ -3,10 +3,10 @@ import { useSelector } from "react-redux";
 import { IAppState } from "../Redux/Store";
 import { Redirect, useParams } from "react-router-dom";
 import axios from "axios";
-import { IPost } from "../models/Post";
+import { IPost } from "../Models/Post";
 import Feed from "../Components/Feed";
 import User from "../Components/User"
-import { IUser } from "../models/User";
+import { IUser } from "../Models/User";
 import { Col, Row} from "reactstrap";
 
 export const Profile: React.FC = (props: any) => {

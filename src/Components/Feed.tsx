@@ -1,7 +1,7 @@
 import '../Styles/Feed.css';
 import React from "react";
 import { ListGroup } from "reactstrap";
-import { IPost } from "../models/Post";
+import { IPost } from "../Models/Post";
 import Post from "./Post";
 
 interface IProps {

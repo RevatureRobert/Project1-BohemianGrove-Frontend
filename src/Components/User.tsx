@@ -8,7 +8,7 @@ import {
     CardSubtitle
 } from 'reactstrap';
 
-import {IUser} from '../models/User'
+import {IUser} from '../Models/User'
 import {Redirect} from 'react-router-dom';
 import { useState } from 'react';
 

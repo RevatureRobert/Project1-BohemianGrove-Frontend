@@ -8,7 +8,7 @@ import {
     Button
 } from 'reactstrap';
 
-import { IPost } from '../models/Post'
+import { IPost } from '../Models/Post'
 import { Redirect } from 'react-router-dom';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';

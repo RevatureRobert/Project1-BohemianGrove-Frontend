@@ -13,7 +13,7 @@ import React, { FormEvent, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { IAppState } from '../Redux/Store';
 import axios from 'axios';
-import { User } from '../models/User';
+import { User } from '../Models/User';
 import { UserAction } from '../Redux/Actions';
 import { Redirect } from 'react-router-dom';
 
